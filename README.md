@@ -76,6 +76,13 @@ input
 |------------|------|-----|----|
 | `APP_TCADIF_KEY` | `Enumeration` | App TCADIF Key Enumeration | the contacted station's Morse key. |
 | `APP_TCADIF_MY_KEY` | `Enumeration` | App TCADIF Key Enumeration | the logging station's Morse key. |
+| `APP_TCADIF_QSO_ID` | `Uuid` | App TCADIF QSO Identifier | Universally Unique IDentifier (UUID) for this QSO. |
+
+### Data Types
+
+| Data Type Name | Data Type Indicator | Description |
+|----------------|---------------------|-------------|
+| `Uuid` | | A string representation of a Universally Unique IDentifier. See [RFC4122](https://datatracker.ietf.org/doc/html/rfc4122). |
 
 ### App TCADIF Key Enumeration
 

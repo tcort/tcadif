@@ -329,6 +329,20 @@ describe('DataTypes', function () {
             ['YY', 'A', 'AY99', 'AA2233', 'AA33A', 'FN25ck,FN25dk',  null, undefined, 1, '', '19291231', 'false', 'true', false, new Date(), /x/, '\n'].forEach(value => expect(DataTypes.SponsoredAwardList(value)).to.be(false));
         });
     });
+    describe('.Uuid(value)', function () {
+        it('should be a function', function () {
+            expect(DataTypes.Uuid).to.be.a('function');
+        });
+        it('should accept 1 argument', function () {
+            expect(DataTypes.Uuid).to.have.length(1);
+        });
+        it('should accept valid UUIDs', function () {
+            [ '6ba7b810-9dad-11d1-80b4-00c04fd430c8', '7d444840-9dc0-11d1-b245-5ffdce74fad2', 'e902893a-9d22-3c7e-a7b8-d6e313b71d9f', 'f81d4fae-7dec-11d0-a765-00a0c91e6bf6', '98e25e87-f800-41c4-b2da-c31bd62e853b' ].forEach(value => expect(DataTypes.Uuid(value)).to.be(true));
+        });
+        it('should reject all other values', function () {
+            ['YY', 'A', 'AY99', 'AA2233', 'AA33A', 'FN25ck,FN25dk',  null, undefined, 1, '', '19291231', 'false', 'true', false, new Date(), /x/, '\n'].forEach(value => expect(DataTypes.Uuid(value)).to.be(false));
+        });
+    });
     describe('.check(dataType, value)', function () {
         it('should be a function', function () {
             expect(DataTypes.check).to.be.a('function');
