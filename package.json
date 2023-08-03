@@ -4,6 +4,7 @@
   "description": "read and write Amateur Data Interchange Format (ADIF)",
   "main": "index.js",
   "scripts": {
+    "prepare": "browserify -r ./index.js:tcadif -o ./dist/tcadif.js",
     "test": "mocha"
   },
   "repository": {
@@ -33,6 +34,7 @@
     "mocha": "^10.2.0"
   },
   "dependencies": {
+    "browserify": "^17.0.0",
     "moment": "^2.29.4"
   }
 }
