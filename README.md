@@ -93,6 +93,7 @@ input
 | `BUG` | Bug |
 | `SLP` | Single-Lever Paddle |
 | `DLP` | Dual-Lever Paddle |
+| `CPU` | Computer 
 
 ## ADIF Implementation Notes
 
