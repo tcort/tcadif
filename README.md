@@ -75,6 +75,7 @@ input
 | Field | Data Type | Sub Type | Description |
 |------------|------|-----|----|
 | `APP_TCADIF_KEY` | `Enumeration` | App TCADIF Key Enumeration | the contacted station's Morse key. |
+| `APP_TCADIF_LICW` | `String` |   | the contacted station's Long Island CW Club (LICW) member information. |
 | `APP_TCADIF_MY_KEY` | `Enumeration` | App TCADIF Key Enumeration | the logging station's Morse key. |
 | `APP_TCADIF_QSO_ID` | `Uuid` | App TCADIF QSO Identifier | Universally Unique IDentifier (UUID) for this QSO. |
 
@@ -93,7 +94,7 @@ input
 | `BUG` | Bug |
 | `SLP` | Single-Lever Paddle |
 | `DLP` | Dual-Lever Paddle |
-| `CPU` | Computer 
+| `CPU` | Computer |
 
 ## ADIF Implementation Notes
 
