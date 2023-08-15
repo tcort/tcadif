@@ -86,7 +86,7 @@ class AdifReader extends Duplex {
 
 module.exports = AdifReader;
 
-},{"./Field":5,"./Header":6,"./QSO":7,"stream":190}],3:[function(require,module,exports){
+},{"./Field":5,"./Header":6,"./QSO":7,"stream":193}],3:[function(require,module,exports){
 'use strict';
 
 const Header = require('./Header');
@@ -131,7 +131,7 @@ class AdifWriter extends Transform {
 
 module.exports = AdifWriter;
 
-},{"../package.json":207,"./Header":6,"./QSO":7,"moment":187,"stream":190}],4:[function(require,module,exports){
+},{"../package.json":210,"./Header":6,"./QSO":7,"moment":190,"stream":193}],4:[function(require,module,exports){
 'use strict';
 
 function checkDate(s) {
@@ -353,7 +353,7 @@ class Header {
 
 module.exports = Header;
 
-},{"../package.json":207,"./AdifError":1,"./DataTypes":4,"./Field":5,"./defs":162}],7:[function(require,module,exports){
+},{"../package.json":210,"./AdifError":1,"./DataTypes":4,"./Field":5,"./defs":165}],7:[function(require,module,exports){
 'use strict';
 
 const AdifError = require('./AdifError');
@@ -406,13 +406,13 @@ class QSO {
 
 module.exports = QSO;
 
-},{"./AdifError":1,"./DataTypes":4,"./Field":5,"./defs":162}],8:[function(require,module,exports){
+},{"./AdifError":1,"./DataTypes":4,"./Field":5,"./defs":165}],8:[function(require,module,exports){
 'use strict';
 
 const { name, version, homepage } = require('../package.json');
 module.exports = { name, version, homepage };
 
-},{"../package.json":207}],9:[function(require,module,exports){
+},{"../package.json":210}],9:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -429,7 +429,7 @@ class ADDRESS extends FieldDef {
 
 module.exports = ADDRESS;
 
-},{"./FieldDef":54}],10:[function(require,module,exports){
+},{"./FieldDef":57}],10:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -448,7 +448,7 @@ class ADIF_VER extends FieldDef {
 
 module.exports = ADIF_VER;
 
-},{"./FieldDef":54}],11:[function(require,module,exports){
+},{"./FieldDef":57}],11:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -466,7 +466,7 @@ class AGE extends FieldDef {
 
 module.exports = AGE;
 
-},{"./FieldDef":54}],12:[function(require,module,exports){
+},{"./FieldDef":57}],12:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -483,7 +483,7 @@ class ALTITUDE extends FieldDef {
 
 module.exports = ALTITUDE;
 
-},{"./FieldDef":54}],13:[function(require,module,exports){
+},{"./FieldDef":57}],13:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -511,7 +511,7 @@ class ANT_AZ extends FieldDef {
 
 module.exports = ANT_AZ;
 
-},{"./FieldDef":54}],14:[function(require,module,exports){
+},{"./FieldDef":57}],14:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -539,7 +539,7 @@ class ANT_EL extends FieldDef {
 
 module.exports = ANT_EL;
 
-},{"./FieldDef":54}],15:[function(require,module,exports){
+},{"./FieldDef":57}],15:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -558,7 +558,7 @@ class ANT_PATH extends FieldDef {
 
 module.exports = ANT_PATH;
 
-},{"./FieldDef":54}],16:[function(require,module,exports){
+},{"./FieldDef":57}],16:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -576,7 +576,41 @@ class APP_TCADIF_KEY extends FieldDef {
 
 module.exports = APP_TCADIF_KEY;
 
-},{"./FieldDef":54}],17:[function(require,module,exports){
+},{"./FieldDef":57}],17:[function(require,module,exports){
+'use strict';
+
+const FieldDef = require('./FieldDef');
+
+class APP_TCADIF_KEY_INFO extends FieldDef {
+    constructor() {
+        super({
+            fieldName: 'APP_TCADIF_KEY_INFO',
+            dataType: 'String',
+            dataTypeIndicator: 'S',
+        });
+    }
+}
+
+module.exports = APP_TCADIF_KEY_INFO;
+
+},{"./FieldDef":57}],18:[function(require,module,exports){
+'use strict';
+
+const FieldDef = require('./FieldDef');
+
+class APP_TCADIF_LICW extends FieldDef {
+    constructor() {
+        super({
+            fieldName: 'APP_TCADIF_LICW',
+            dataType: 'String',
+            dataTypeIndicator: 'S',
+        });
+    }
+}
+
+module.exports = APP_TCADIF_LICW;
+
+},{"./FieldDef":57}],19:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -594,7 +628,24 @@ class APP_TCADIF_MY_KEY extends FieldDef {
 
 module.exports = APP_TCADIF_MY_KEY;
 
-},{"./FieldDef":54}],18:[function(require,module,exports){
+},{"./FieldDef":57}],20:[function(require,module,exports){
+'use strict';
+
+const FieldDef = require('./FieldDef');
+
+class APP_TCADIF_MY_KEY_INFO extends FieldDef {
+    constructor() {
+        super({
+            fieldName: 'APP_TCADIF_MY_KEY_INFO',
+            dataType: 'String',
+            dataTypeIndicator: 'S',
+        });
+    }
+}
+
+module.exports = APP_TCADIF_MY_KEY_INFO;
+
+},{"./FieldDef":57}],21:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -610,7 +661,7 @@ class APP_TCADIF_QSO_ID extends FieldDef {
 
 module.exports = APP_TCADIF_QSO_ID;
 
-},{"./FieldDef":54}],19:[function(require,module,exports){
+},{"./FieldDef":57}],22:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -629,7 +680,7 @@ class ARRL_SECT extends FieldDef {
 
 module.exports = ARRL_SECT;
 
-},{"./FieldDef":54}],20:[function(require,module,exports){
+},{"./FieldDef":57}],23:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -645,7 +696,7 @@ class AWARD_GRANTED extends FieldDef {
 
 module.exports = AWARD_GRANTED;
 
-},{"./FieldDef":54}],21:[function(require,module,exports){
+},{"./FieldDef":57}],24:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -661,7 +712,7 @@ class AWARD_SUBMITTED extends FieldDef {
 
 module.exports = AWARD_SUBMITTED;
 
-},{"./FieldDef":54}],22:[function(require,module,exports){
+},{"./FieldDef":57}],25:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -679,7 +730,7 @@ class A_INDEX extends FieldDef {
 
 module.exports = A_INDEX;
 
-},{"./FieldDef":54}],23:[function(require,module,exports){
+},{"./FieldDef":57}],26:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -698,7 +749,7 @@ class BAND extends FieldDef {
 
 module.exports = BAND;
 
-},{"./FieldDef":54}],24:[function(require,module,exports){
+},{"./FieldDef":57}],27:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -717,7 +768,7 @@ class BAND_RX extends FieldDef {
 
 module.exports = BAND_RX;
 
-},{"./FieldDef":54}],25:[function(require,module,exports){
+},{"./FieldDef":57}],28:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -735,7 +786,7 @@ class CALL extends FieldDef {
 
 module.exports = CALL;
 
-},{"./FieldDef":54}],26:[function(require,module,exports){
+},{"./FieldDef":57}],29:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -752,7 +803,7 @@ class CHECK extends FieldDef {
 
 module.exports = CHECK;
 
-},{"./FieldDef":54}],27:[function(require,module,exports){
+},{"./FieldDef":57}],30:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -769,7 +820,7 @@ class CLASS extends FieldDef {
 
 module.exports = CLASS;
 
-},{"./FieldDef":54}],28:[function(require,module,exports){
+},{"./FieldDef":57}],31:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -786,7 +837,7 @@ class CLUBLOG_QSO_UPLOAD_DATE extends FieldDef {
 
 module.exports = CLUBLOG_QSO_UPLOAD_DATE;
 
-},{"./FieldDef":54}],29:[function(require,module,exports){
+},{"./FieldDef":57}],32:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -804,7 +855,7 @@ class CLUBLOG_QSO_UPLOAD_STATUS extends FieldDef {
 
 module.exports = CLUBLOG_QSO_UPLOAD_STATUS;
 
-},{"./FieldDef":54}],30:[function(require,module,exports){
+},{"./FieldDef":57}],33:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -821,7 +872,7 @@ class CNTY extends FieldDef {
 
 module.exports = CNTY;
 
-},{"./FieldDef":54}],31:[function(require,module,exports){
+},{"./FieldDef":57}],34:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -838,7 +889,7 @@ class COMMENT extends FieldDef {
 
 module.exports = COMMENT;
 
-},{"./FieldDef":54}],32:[function(require,module,exports){
+},{"./FieldDef":57}],35:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -856,7 +907,7 @@ class CONT extends FieldDef {
 
 module.exports = CONT;
 
-},{"./FieldDef":54}],33:[function(require,module,exports){
+},{"./FieldDef":57}],36:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -874,7 +925,7 @@ class CONTACTED_OP extends FieldDef {
 
 module.exports = CONTACTED_OP;
 
-},{"./FieldDef":54}],34:[function(require,module,exports){
+},{"./FieldDef":57}],37:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -891,7 +942,7 @@ class CONTEST_ID extends FieldDef {
 
 module.exports = CONTEST_ID;
 
-},{"./FieldDef":54}],35:[function(require,module,exports){
+},{"./FieldDef":57}],38:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -908,7 +959,7 @@ class COUNTRY extends FieldDef {
 
 module.exports = COUNTRY;
 
-},{"./FieldDef":54}],36:[function(require,module,exports){
+},{"./FieldDef":57}],39:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -925,7 +976,7 @@ class CQZ extends FieldDef {
 
 module.exports = CQZ;
 
-},{"./FieldDef":54}],37:[function(require,module,exports){
+},{"./FieldDef":57}],40:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -949,7 +1000,7 @@ class CREATED_TIMESTAMP extends FieldDef {
 
 module.exports = CREATED_TIMESTAMP;
 
-},{"../DataTypes":4,"./FieldDef":54}],38:[function(require,module,exports){
+},{"../DataTypes":4,"./FieldDef":57}],41:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -981,7 +1032,7 @@ class CREDIT_GRANTED extends FieldDef {
 
 module.exports = CREDIT_GRANTED;
 
-},{"../enums":180,"./FieldDef":54}],39:[function(require,module,exports){
+},{"../enums":183,"./FieldDef":57}],42:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1013,7 +1064,7 @@ class CREDIT_SUBMITTED extends FieldDef {
 
 module.exports = CREDIT_SUBMITTED;
 
-},{"../enums":180,"./FieldDef":54}],40:[function(require,module,exports){
+},{"../enums":183,"./FieldDef":57}],43:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1029,7 +1080,7 @@ class DARC_DOK extends FieldDef {
 
 module.exports = DARC_DOK;
 
-},{"./FieldDef":54}],41:[function(require,module,exports){
+},{"./FieldDef":57}],44:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1047,7 +1098,7 @@ class DISTANCE extends FieldDef {
 
 module.exports = DISTANCE;
 
-},{"./FieldDef":54}],42:[function(require,module,exports){
+},{"./FieldDef":57}],45:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1065,7 +1116,7 @@ class DXCC extends FieldDef {
 
 module.exports = DXCC;
 
-},{"./FieldDef":54}],43:[function(require,module,exports){
+},{"./FieldDef":57}],46:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1082,7 +1133,7 @@ class EMAIL extends FieldDef {
 
 module.exports = EMAIL;
 
-},{"./FieldDef":54}],44:[function(require,module,exports){
+},{"./FieldDef":57}],47:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1099,7 +1150,7 @@ class EQSL_QSLRDATE extends FieldDef {
 
 module.exports = EQSL_QSLRDATE;
 
-},{"./FieldDef":54}],45:[function(require,module,exports){
+},{"./FieldDef":57}],48:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1116,7 +1167,7 @@ class EQSL_QSLSDATE extends FieldDef {
 
 module.exports = EQSL_QSLSDATE;
 
-},{"./FieldDef":54}],46:[function(require,module,exports){
+},{"./FieldDef":57}],49:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1135,7 +1186,7 @@ class EQSL_QSL_RCVD extends FieldDef {
 
 module.exports = EQSL_QSL_RCVD;
 
-},{"./FieldDef":54}],47:[function(require,module,exports){
+},{"./FieldDef":57}],50:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1154,7 +1205,7 @@ class EQSL_QSL_SENT extends FieldDef {
 
 module.exports = EQSL_QSL_SENT;
 
-},{"./FieldDef":54}],48:[function(require,module,exports){
+},{"./FieldDef":57}],51:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1172,7 +1223,7 @@ class EQ_CALL extends FieldDef {
 
 module.exports = EQ_CALL;
 
-},{"./FieldDef":54}],49:[function(require,module,exports){
+},{"./FieldDef":57}],52:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1188,7 +1239,7 @@ class FISTS extends FieldDef {
 
 module.exports = FISTS;
 
-},{"./FieldDef":54}],50:[function(require,module,exports){
+},{"./FieldDef":57}],53:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1204,7 +1255,7 @@ class FISTS_CC extends FieldDef {
 
 module.exports = FISTS_CC;
 
-},{"./FieldDef":54}],51:[function(require,module,exports){
+},{"./FieldDef":57}],54:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1221,7 +1272,7 @@ class FORCE_INIT extends FieldDef {
 
 module.exports = FORCE_INIT;
 
-},{"./FieldDef":54}],52:[function(require,module,exports){
+},{"./FieldDef":57}],55:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1238,7 +1289,7 @@ class FREQ extends FieldDef {
 
 module.exports = FREQ;
 
-},{"./FieldDef":54}],53:[function(require,module,exports){
+},{"./FieldDef":57}],56:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1255,7 +1306,7 @@ class FREQ_RX extends FieldDef {
 
 module.exports = FREQ_RX;
 
-},{"./FieldDef":54}],54:[function(require,module,exports){
+},{"./FieldDef":57}],57:[function(require,module,exports){
 'use strict';
 
 const AdifError = require('../AdifError');
@@ -1349,7 +1400,7 @@ class FieldDef {
 
 module.exports = FieldDef;
 
-},{"../AdifError":1,"../DataTypes":4,"../enums":180}],55:[function(require,module,exports){
+},{"../AdifError":1,"../DataTypes":4,"../enums":183}],58:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1366,7 +1417,7 @@ class GRIDSQUARE extends FieldDef {
 
 module.exports = GRIDSQUARE;
 
-},{"./FieldDef":54}],56:[function(require,module,exports){
+},{"./FieldDef":57}],59:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1383,7 +1434,7 @@ class GRIDSQUARE_EXT extends FieldDef {
 
 module.exports = GRIDSQUARE_EXT;
 
-},{"./FieldDef":54}],57:[function(require,module,exports){
+},{"./FieldDef":57}],60:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1400,7 +1451,7 @@ class HAMLOGEU_QSO_UPLOAD_DATE extends FieldDef {
 
 module.exports = HAMLOGEU_QSO_UPLOAD_DATE;
 
-},{"./FieldDef":54}],58:[function(require,module,exports){
+},{"./FieldDef":57}],61:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1418,7 +1469,7 @@ class HAMLOGEU_QSO_UPLOAD_STATUS extends FieldDef {
 
 module.exports = HAMLOGEU_QSO_UPLOAD_STATUS;
 
-},{"./FieldDef":54}],59:[function(require,module,exports){
+},{"./FieldDef":57}],62:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1435,7 +1486,7 @@ class HAMQTH_QSO_UPLOAD_DATE extends FieldDef {
 
 module.exports = HAMQTH_QSO_UPLOAD_DATE;
 
-},{"./FieldDef":54}],60:[function(require,module,exports){
+},{"./FieldDef":57}],63:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1453,7 +1504,7 @@ class HAMQTH_QSO_UPLOAD_STATUS extends FieldDef {
 
 module.exports = HAMQTH_QSO_UPLOAD_STATUS;
 
-},{"./FieldDef":54}],61:[function(require,module,exports){
+},{"./FieldDef":57}],64:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1470,7 +1521,7 @@ class HRDLOG_QSO_UPLOAD_DATE extends FieldDef {
 
 module.exports = HRDLOG_QSO_UPLOAD_DATE;
 
-},{"./FieldDef":54}],62:[function(require,module,exports){
+},{"./FieldDef":57}],65:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1488,7 +1539,7 @@ class HRDLOG_QSO_UPLOAD_STATUS extends FieldDef {
 
 module.exports = HRDLOG_QSO_UPLOAD_STATUS;
 
-},{"./FieldDef":54}],63:[function(require,module,exports){
+},{"./FieldDef":57}],66:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1504,7 +1555,7 @@ class IOTA extends FieldDef {
 
 module.exports = IOTA;
 
-},{"./FieldDef":54}],64:[function(require,module,exports){
+},{"./FieldDef":57}],67:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1521,7 +1572,7 @@ class IOTA_ISLAND_ID extends FieldDef {
 
 module.exports = IOTA_ISLAND_ID;
 
-},{"./FieldDef":54}],65:[function(require,module,exports){
+},{"./FieldDef":57}],68:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1538,7 +1589,7 @@ class ITUZ extends FieldDef {
 
 module.exports = ITUZ;
 
-},{"./FieldDef":54}],66:[function(require,module,exports){
+},{"./FieldDef":57}],69:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1555,7 +1606,7 @@ class K_INDEX extends FieldDef {
 
 module.exports = K_INDEX;
 
-},{"./FieldDef":54}],67:[function(require,module,exports){
+},{"./FieldDef":57}],70:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1573,7 +1624,7 @@ class LAT extends FieldDef {
 
 module.exports = LAT;
 
-},{"./FieldDef":54}],68:[function(require,module,exports){
+},{"./FieldDef":57}],71:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1591,7 +1642,7 @@ class LON extends FieldDef {
 
 module.exports = LON;
 
-},{"./FieldDef":54}],69:[function(require,module,exports){
+},{"./FieldDef":57}],72:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1608,7 +1659,7 @@ class LOTW_QSLRDATE extends FieldDef {
 
 module.exports = LOTW_QSLRDATE;
 
-},{"./FieldDef":54}],70:[function(require,module,exports){
+},{"./FieldDef":57}],73:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1625,7 +1676,7 @@ class LOTW_QSLSDATE extends FieldDef {
 
 module.exports = LOTW_QSLSDATE;
 
-},{"./FieldDef":54}],71:[function(require,module,exports){
+},{"./FieldDef":57}],74:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1644,7 +1695,7 @@ class LOTW_QSL_RCVD extends FieldDef {
 
 module.exports = LOTW_QSL_RCVD;
 
-},{"./FieldDef":54}],72:[function(require,module,exports){
+},{"./FieldDef":57}],75:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1663,7 +1714,7 @@ class LOTW_QSL_SENT extends FieldDef {
 
 module.exports = LOTW_QSL_SENT;
 
-},{"./FieldDef":54}],73:[function(require,module,exports){
+},{"./FieldDef":57}],76:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1680,7 +1731,7 @@ class MAX_BURSTS extends FieldDef {
 
 module.exports = MAX_BURSTS;
 
-},{"./FieldDef":54}],74:[function(require,module,exports){
+},{"./FieldDef":57}],77:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1699,7 +1750,7 @@ class MODE extends FieldDef {
 
 module.exports = MODE;
 
-},{"./FieldDef":54}],75:[function(require,module,exports){
+},{"./FieldDef":57}],78:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1716,7 +1767,7 @@ class MS_SHOWER extends FieldDef {
 
 module.exports = MS_SHOWER;
 
-},{"./FieldDef":54}],76:[function(require,module,exports){
+},{"./FieldDef":57}],79:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1733,7 +1784,7 @@ class MY_ALTITUDE extends FieldDef {
 
 module.exports = MY_ALTITUDE;
 
-},{"./FieldDef":54}],77:[function(require,module,exports){
+},{"./FieldDef":57}],80:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1750,7 +1801,7 @@ class MY_ANTENNA extends FieldDef {
 
 module.exports = MY_ANTENNA;
 
-},{"./FieldDef":54}],78:[function(require,module,exports){
+},{"./FieldDef":57}],81:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1769,7 +1820,7 @@ class MY_ARRL_SECT extends FieldDef {
 
 module.exports = MY_ARRL_SECT;
 
-},{"./FieldDef":54}],79:[function(require,module,exports){
+},{"./FieldDef":57}],82:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1786,7 +1837,7 @@ class MY_CITY extends FieldDef {
 
 module.exports = MY_CITY;
 
-},{"./FieldDef":54}],80:[function(require,module,exports){
+},{"./FieldDef":57}],83:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1803,7 +1854,7 @@ class MY_CNTY extends FieldDef {
 
 module.exports = MY_CNTY;
 
-},{"./FieldDef":54}],81:[function(require,module,exports){
+},{"./FieldDef":57}],84:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1820,7 +1871,7 @@ class MY_COUNTRY extends FieldDef {
 
 module.exports = MY_COUNTRY;
 
-},{"./FieldDef":54}],82:[function(require,module,exports){
+},{"./FieldDef":57}],85:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1837,7 +1888,7 @@ class MY_CQ_ZONE extends FieldDef {
 
 module.exports = MY_CQ_ZONE;
 
-},{"./FieldDef":54}],83:[function(require,module,exports){
+},{"./FieldDef":57}],86:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1855,7 +1906,7 @@ class MY_DXCC extends FieldDef {
 
 module.exports = MY_DXCC;
 
-},{"./FieldDef":54}],84:[function(require,module,exports){
+},{"./FieldDef":57}],87:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1871,7 +1922,7 @@ class MY_FISTS extends FieldDef {
 
 module.exports = MY_FISTS;
 
-},{"./FieldDef":54}],85:[function(require,module,exports){
+},{"./FieldDef":57}],88:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1888,7 +1939,7 @@ class MY_GRIDSQUARE extends FieldDef {
 
 module.exports = MY_GRIDSQUARE;
 
-},{"./FieldDef":54}],86:[function(require,module,exports){
+},{"./FieldDef":57}],89:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1905,7 +1956,7 @@ class MY_GRIDSQUARE_EXT extends FieldDef {
 
 module.exports = MY_GRIDSQUARE_EXT;
 
-},{"./FieldDef":54}],87:[function(require,module,exports){
+},{"./FieldDef":57}],90:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1921,7 +1972,7 @@ class MY_IOTA extends FieldDef {
 
 module.exports = MY_IOTA;
 
-},{"./FieldDef":54}],88:[function(require,module,exports){
+},{"./FieldDef":57}],91:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1938,7 +1989,7 @@ class MY_IOTA_ISLAND_ID extends FieldDef {
 
 module.exports = MY_IOTA_ISLAND_ID;
 
-},{"./FieldDef":54}],89:[function(require,module,exports){
+},{"./FieldDef":57}],92:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1955,7 +2006,7 @@ class MY_ITU_ZONE extends FieldDef {
 
 module.exports = MY_ITU_ZONE;
 
-},{"./FieldDef":54}],90:[function(require,module,exports){
+},{"./FieldDef":57}],93:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1973,7 +2024,7 @@ class MY_LAT extends FieldDef {
 
 module.exports = MY_LAT;
 
-},{"./FieldDef":54}],91:[function(require,module,exports){
+},{"./FieldDef":57}],94:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -1991,7 +2042,7 @@ class MY_LON extends FieldDef {
 
 module.exports = MY_LON;
 
-},{"./FieldDef":54}],92:[function(require,module,exports){
+},{"./FieldDef":57}],95:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2008,7 +2059,7 @@ class MY_NAME extends FieldDef {
 
 module.exports = MY_NAME;
 
-},{"./FieldDef":54}],93:[function(require,module,exports){
+},{"./FieldDef":57}],96:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2025,7 +2076,7 @@ class MY_POSTAL_CODE extends FieldDef {
 
 module.exports = MY_POSTAL_CODE;
 
-},{"./FieldDef":54}],94:[function(require,module,exports){
+},{"./FieldDef":57}],97:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2041,7 +2092,7 @@ class MY_POTA_REF extends FieldDef {
 
 module.exports = MY_POTA_REF;
 
-},{"./FieldDef":54}],95:[function(require,module,exports){
+},{"./FieldDef":57}],98:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2058,7 +2109,7 @@ class MY_RIG extends FieldDef {
 
 module.exports = MY_RIG;
 
-},{"./FieldDef":54}],96:[function(require,module,exports){
+},{"./FieldDef":57}],99:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2075,7 +2126,7 @@ class MY_SIG extends FieldDef {
 
 module.exports = MY_SIG;
 
-},{"./FieldDef":54}],97:[function(require,module,exports){
+},{"./FieldDef":57}],100:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2092,7 +2143,7 @@ class MY_SIG_INFO extends FieldDef {
 
 module.exports = MY_SIG_INFO;
 
-},{"./FieldDef":54}],98:[function(require,module,exports){
+},{"./FieldDef":57}],101:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2108,7 +2159,7 @@ class MY_SOTA_REF extends FieldDef {
 
 module.exports = MY_SOTA_REF;
 
-},{"./FieldDef":54}],99:[function(require,module,exports){
+},{"./FieldDef":57}],102:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2124,7 +2175,7 @@ class MY_STATE extends FieldDef {
 
 module.exports = MY_STATE;
 
-},{"./FieldDef":54}],100:[function(require,module,exports){
+},{"./FieldDef":57}],103:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2141,7 +2192,7 @@ class MY_STREET extends FieldDef {
 
 module.exports = MY_STREET;
 
-},{"./FieldDef":54}],101:[function(require,module,exports){
+},{"./FieldDef":57}],104:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2157,7 +2208,7 @@ class MY_USACA_COUNTIES extends FieldDef {
 
 module.exports = MY_USACA_COUNTIES;
 
-},{"./FieldDef":54}],102:[function(require,module,exports){
+},{"./FieldDef":57}],105:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2175,7 +2226,7 @@ class MY_VUCC_GRIDS extends FieldDef {
 
 module.exports = MY_VUCC_GRIDS;
 
-},{"./FieldDef":54}],103:[function(require,module,exports){
+},{"./FieldDef":57}],106:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2191,7 +2242,7 @@ class MY_WWFF_REF extends FieldDef {
 
 module.exports = MY_WWFF_REF;
 
-},{"./FieldDef":54}],104:[function(require,module,exports){
+},{"./FieldDef":57}],107:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2208,7 +2259,7 @@ class NAME extends FieldDef {
 
 module.exports = NAME;
 
-},{"./FieldDef":54}],105:[function(require,module,exports){
+},{"./FieldDef":57}],108:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2225,7 +2276,7 @@ class NOTES extends FieldDef {
 
 module.exports = NOTES;
 
-},{"./FieldDef":54}],106:[function(require,module,exports){
+},{"./FieldDef":57}],109:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2242,7 +2293,7 @@ class NR_BURSTS extends FieldDef {
 
 module.exports = NR_BURSTS;
 
-},{"./FieldDef":54}],107:[function(require,module,exports){
+},{"./FieldDef":57}],110:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2259,7 +2310,7 @@ class NR_PINGS extends FieldDef {
 
 module.exports = NR_PINGS;
 
-},{"./FieldDef":54}],108:[function(require,module,exports){
+},{"./FieldDef":57}],111:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2277,7 +2328,7 @@ class OPERATOR extends FieldDef {
 
 module.exports = OPERATOR;
 
-},{"./FieldDef":54}],109:[function(require,module,exports){
+},{"./FieldDef":57}],112:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2295,7 +2346,7 @@ class OWNER_CALLSIGN extends FieldDef {
 
 module.exports = OWNER_CALLSIGN;
 
-},{"./FieldDef":54}],110:[function(require,module,exports){
+},{"./FieldDef":57}],113:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2312,7 +2363,7 @@ class PFX extends FieldDef {
 
 module.exports = PFX;
 
-},{"./FieldDef":54}],111:[function(require,module,exports){
+},{"./FieldDef":57}],114:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2328,7 +2379,7 @@ class POTA_REF extends FieldDef {
 
 module.exports = POTA_REF;
 
-},{"./FieldDef":54}],112:[function(require,module,exports){
+},{"./FieldDef":57}],115:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2345,7 +2396,7 @@ class PRECEDENCE extends FieldDef {
 
 module.exports = PRECEDENCE;
 
-},{"./FieldDef":54}],113:[function(require,module,exports){
+},{"./FieldDef":57}],116:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2362,7 +2413,7 @@ class PROGRAMID extends FieldDef {
 
 module.exports = PROGRAMID;
 
-},{"./FieldDef":54}],114:[function(require,module,exports){
+},{"./FieldDef":57}],117:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2379,7 +2430,7 @@ class PROGRAMVERSION extends FieldDef {
 
 module.exports = PROGRAMVERSION;
 
-},{"./FieldDef":54}],115:[function(require,module,exports){
+},{"./FieldDef":57}],118:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2398,7 +2449,7 @@ class PROP_MODE extends FieldDef {
 
 module.exports = PROP_MODE;
 
-},{"./FieldDef":54}],116:[function(require,module,exports){
+},{"./FieldDef":57}],119:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2415,7 +2466,7 @@ class PUBLIC_KEY extends FieldDef {
 
 module.exports = PUBLIC_KEY;
 
-},{"./FieldDef":54}],117:[function(require,module,exports){
+},{"./FieldDef":57}],120:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2432,7 +2483,7 @@ class QRZCOM_QSO_UPLOAD_DATE extends FieldDef {
 
 module.exports = QRZCOM_QSO_UPLOAD_DATE;
 
-},{"./FieldDef":54}],118:[function(require,module,exports){
+},{"./FieldDef":57}],121:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2450,7 +2501,7 @@ class QRZCOM_QSO_UPLOAD_STATUS extends FieldDef {
 
 module.exports = QRZCOM_QSO_UPLOAD_STATUS;
 
-},{"./FieldDef":54}],119:[function(require,module,exports){
+},{"./FieldDef":57}],122:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2467,7 +2518,7 @@ class QSLMSG extends FieldDef {
 
 module.exports = QSLMSG;
 
-},{"./FieldDef":54}],120:[function(require,module,exports){
+},{"./FieldDef":57}],123:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2484,7 +2535,7 @@ class QSLRDATE extends FieldDef {
 
 module.exports = QSLRDATE;
 
-},{"./FieldDef":54}],121:[function(require,module,exports){
+},{"./FieldDef":57}],124:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2501,7 +2552,7 @@ class QSLSDATE extends FieldDef {
 
 module.exports = QSLSDATE;
 
-},{"./FieldDef":54}],122:[function(require,module,exports){
+},{"./FieldDef":57}],125:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2520,7 +2571,7 @@ class QSL_RCVD extends FieldDef {
 
 module.exports = QSL_RCVD;
 
-},{"./FieldDef":54}],123:[function(require,module,exports){
+},{"./FieldDef":57}],126:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2539,7 +2590,7 @@ class QSL_RCVD_VIA extends FieldDef {
 
 module.exports = QSL_RCVD_VIA;
 
-},{"./FieldDef":54}],124:[function(require,module,exports){
+},{"./FieldDef":57}],127:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2558,7 +2609,7 @@ class QSL_SENT extends FieldDef {
 
 module.exports = QSL_SENT;
 
-},{"./FieldDef":54}],125:[function(require,module,exports){
+},{"./FieldDef":57}],128:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2577,7 +2628,7 @@ class QSL_SENT_VIA extends FieldDef {
 
 module.exports = QSL_SENT_VIA;
 
-},{"./FieldDef":54}],126:[function(require,module,exports){
+},{"./FieldDef":57}],129:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2594,7 +2645,7 @@ class QSL_VIA extends FieldDef {
 
 module.exports = QSL_VIA;
 
-},{"./FieldDef":54}],127:[function(require,module,exports){
+},{"./FieldDef":57}],130:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2613,7 +2664,7 @@ class QSO_COMPLETE extends FieldDef {
 
 module.exports = QSO_COMPLETE;
 
-},{"./FieldDef":54}],128:[function(require,module,exports){
+},{"./FieldDef":57}],131:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2630,7 +2681,7 @@ class QSO_DATE extends FieldDef {
 
 module.exports = QSO_DATE;
 
-},{"./FieldDef":54}],129:[function(require,module,exports){
+},{"./FieldDef":57}],132:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2647,7 +2698,7 @@ class QSO_DATE_OFF extends FieldDef {
 
 module.exports = QSO_DATE_OFF;
 
-},{"./FieldDef":54}],130:[function(require,module,exports){
+},{"./FieldDef":57}],133:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2664,7 +2715,7 @@ class QSO_RANDOM extends FieldDef {
 
 module.exports = QSO_RANDOM;
 
-},{"./FieldDef":54}],131:[function(require,module,exports){
+},{"./FieldDef":57}],134:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2681,7 +2732,7 @@ class QTH extends FieldDef {
 
 module.exports = QTH;
 
-},{"./FieldDef":54}],132:[function(require,module,exports){
+},{"./FieldDef":57}],135:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2700,7 +2751,7 @@ class REGION extends FieldDef {
 
 module.exports = REGION;
 
-},{"./FieldDef":54}],133:[function(require,module,exports){
+},{"./FieldDef":57}],136:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2717,7 +2768,7 @@ class RIG extends FieldDef {
 
 module.exports = RIG;
 
-},{"./FieldDef":54}],134:[function(require,module,exports){
+},{"./FieldDef":57}],137:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2734,7 +2785,7 @@ class RST_RCVD extends FieldDef {
 
 module.exports = RST_RCVD;
 
-},{"./FieldDef":54}],135:[function(require,module,exports){
+},{"./FieldDef":57}],138:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2751,7 +2802,7 @@ class RST_SENT extends FieldDef {
 
 module.exports = RST_SENT;
 
-},{"./FieldDef":54}],136:[function(require,module,exports){
+},{"./FieldDef":57}],139:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2769,7 +2820,7 @@ class RX_PWR extends FieldDef {
 
 module.exports = RX_PWR;
 
-},{"./FieldDef":54}],137:[function(require,module,exports){
+},{"./FieldDef":57}],140:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2786,7 +2837,7 @@ class SAT_MODE extends FieldDef {
 
 module.exports = SAT_MODE;
 
-},{"./FieldDef":54}],138:[function(require,module,exports){
+},{"./FieldDef":57}],141:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2803,7 +2854,7 @@ class SAT_NAME extends FieldDef {
 
 module.exports = SAT_NAME;
 
-},{"./FieldDef":54}],139:[function(require,module,exports){
+},{"./FieldDef":57}],142:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2820,7 +2871,7 @@ class SFI extends FieldDef {
 
 module.exports = SFI;
 
-},{"./FieldDef":54}],140:[function(require,module,exports){
+},{"./FieldDef":57}],143:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2837,7 +2888,7 @@ class SIG extends FieldDef {
 
 module.exports = SIG;
 
-},{"./FieldDef":54}],141:[function(require,module,exports){
+},{"./FieldDef":57}],144:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2854,7 +2905,7 @@ class SIG_INFO extends FieldDef {
 
 module.exports = SIG_INFO;
 
-},{"./FieldDef":54}],142:[function(require,module,exports){
+},{"./FieldDef":57}],145:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2871,7 +2922,7 @@ class SILENT_KEY extends FieldDef {
 
 module.exports = SILENT_KEY;
 
-},{"./FieldDef":54}],143:[function(require,module,exports){
+},{"./FieldDef":57}],146:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2888,7 +2939,7 @@ class SKCC extends FieldDef {
 
 module.exports = SKCC;
 
-},{"./FieldDef":54}],144:[function(require,module,exports){
+},{"./FieldDef":57}],147:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2904,7 +2955,7 @@ class SOTA_REF extends FieldDef {
 
 module.exports = SOTA_REF;
 
-},{"./FieldDef":54}],145:[function(require,module,exports){
+},{"./FieldDef":57}],148:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2921,7 +2972,7 @@ class SRX extends FieldDef {
 
 module.exports = SRX;
 
-},{"./FieldDef":54}],146:[function(require,module,exports){
+},{"./FieldDef":57}],149:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2938,7 +2989,7 @@ class SRX_STRING extends FieldDef {
 
 module.exports = SRX_STRING;
 
-},{"./FieldDef":54}],147:[function(require,module,exports){
+},{"./FieldDef":57}],150:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2954,7 +3005,7 @@ class STATE extends FieldDef {
 
 module.exports = STATE;
 
-},{"./FieldDef":54}],148:[function(require,module,exports){
+},{"./FieldDef":57}],151:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2972,7 +3023,7 @@ class STATION_CALLSIGN extends FieldDef {
 
 module.exports = STATION_CALLSIGN;
 
-},{"./FieldDef":54}],149:[function(require,module,exports){
+},{"./FieldDef":57}],152:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -2989,7 +3040,7 @@ class STX extends FieldDef {
 
 module.exports = STX;
 
-},{"./FieldDef":54}],150:[function(require,module,exports){
+},{"./FieldDef":57}],153:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3006,7 +3057,7 @@ class STX_STRING extends FieldDef {
 
 module.exports = STX_STRING;
 
-},{"./FieldDef":54}],151:[function(require,module,exports){
+},{"./FieldDef":57}],154:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3023,7 +3074,7 @@ class SUBMODE extends FieldDef {
 
 module.exports = SUBMODE;
 
-},{"./FieldDef":54}],152:[function(require,module,exports){
+},{"./FieldDef":57}],155:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3040,7 +3091,7 @@ class SWL extends FieldDef {
 
 module.exports = SWL;
 
-},{"./FieldDef":54}],153:[function(require,module,exports){
+},{"./FieldDef":57}],156:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3056,7 +3107,7 @@ class TEN_TEN extends FieldDef {
 
 module.exports = TEN_TEN;
 
-},{"./FieldDef":54}],154:[function(require,module,exports){
+},{"./FieldDef":57}],157:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3073,7 +3124,7 @@ class TIME_OFF extends FieldDef {
 
 module.exports = TIME_OFF;
 
-},{"./FieldDef":54}],155:[function(require,module,exports){
+},{"./FieldDef":57}],158:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3090,7 +3141,7 @@ class TIME_ON extends FieldDef {
 
 module.exports = TIME_ON;
 
-},{"./FieldDef":54}],156:[function(require,module,exports){
+},{"./FieldDef":57}],159:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3108,7 +3159,7 @@ class TX_PWR extends FieldDef {
 
 module.exports = TX_PWR;
 
-},{"./FieldDef":54}],157:[function(require,module,exports){
+},{"./FieldDef":57}],160:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3124,7 +3175,7 @@ class UKSMG extends FieldDef {
 
 module.exports = UKSMG;
 
-},{"./FieldDef":54}],158:[function(require,module,exports){
+},{"./FieldDef":57}],161:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3140,7 +3191,7 @@ class USACA_COUNTIES extends FieldDef {
 
 module.exports = USACA_COUNTIES;
 
-},{"./FieldDef":54}],159:[function(require,module,exports){
+},{"./FieldDef":57}],162:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3158,7 +3209,7 @@ class VUCC_GRIDS extends FieldDef {
 
 module.exports = VUCC_GRIDS;
 
-},{"./FieldDef":54}],160:[function(require,module,exports){
+},{"./FieldDef":57}],163:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3175,7 +3226,7 @@ class WEB extends FieldDef {
 
 module.exports = WEB;
 
-},{"./FieldDef":54}],161:[function(require,module,exports){
+},{"./FieldDef":57}],164:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3191,7 +3242,7 @@ class WWFF_REF extends FieldDef {
 
 module.exports = WWFF_REF;
 
-},{"./FieldDef":54}],162:[function(require,module,exports){
+},{"./FieldDef":57}],165:[function(require,module,exports){
 'use strict';
 
 const ADIF_VER = require('./ADIF_VER');
@@ -3206,7 +3257,10 @@ const ANT_AZ = require('./ANT_AZ');
 const ANT_EL = require('./ANT_EL');
 const ANT_PATH = require('./ANT_PATH');
 const APP_TCADIF_KEY = require('./APP_TCADIF_KEY');
+const APP_TCADIF_KEY_INFO = require('./APP_TCADIF_KEY_INFO');
 const APP_TCADIF_MY_KEY = require('./APP_TCADIF_MY_KEY');
+const APP_TCADIF_MY_KEY_INFO = require('./APP_TCADIF_MY_KEY_INFO');
+const APP_TCADIF_LICW = require('./APP_TCADIF_LICW');
 const APP_TCADIF_QSO_ID = require('./APP_TCADIF_QSO_ID');
 const ARRL_SECT = require('./ARRL_SECT');
 const AWARD_SUBMITTED = require('./AWARD_SUBMITTED');
@@ -3363,7 +3417,10 @@ module.exports = {
         ANT_EL,
         ANT_PATH,
         APP_TCADIF_KEY,
+        APP_TCADIF_KEY_INFO,
         APP_TCADIF_MY_KEY,
+        APP_TCADIF_MY_KEY_INFO,
+        APP_TCADIF_LICW,
         APP_TCADIF_QSO_ID,
         ARRL_SECT,
         AWARD_SUBMITTED,
@@ -3507,7 +3564,7 @@ module.exports = {
     },
 };
 
-},{"./ADDRESS":9,"./ADIF_VER":10,"./AGE":11,"./ALTITUDE":12,"./ANT_AZ":13,"./ANT_EL":14,"./ANT_PATH":15,"./APP_TCADIF_KEY":16,"./APP_TCADIF_MY_KEY":17,"./APP_TCADIF_QSO_ID":18,"./ARRL_SECT":19,"./AWARD_GRANTED":20,"./AWARD_SUBMITTED":21,"./A_INDEX":22,"./BAND":23,"./BAND_RX":24,"./CALL":25,"./CHECK":26,"./CLASS":27,"./CLUBLOG_QSO_UPLOAD_DATE":28,"./CLUBLOG_QSO_UPLOAD_STATUS":29,"./CNTY":30,"./COMMENT":31,"./CONT":32,"./CONTACTED_OP":33,"./CONTEST_ID":34,"./COUNTRY":35,"./CQZ":36,"./CREATED_TIMESTAMP":37,"./CREDIT_GRANTED":38,"./CREDIT_SUBMITTED":39,"./DARC_DOK":40,"./DISTANCE":41,"./DXCC":42,"./EMAIL":43,"./EQSL_QSLRDATE":44,"./EQSL_QSLSDATE":45,"./EQSL_QSL_RCVD":46,"./EQSL_QSL_SENT":47,"./EQ_CALL":48,"./FISTS":49,"./FISTS_CC":50,"./FORCE_INIT":51,"./FREQ":52,"./FREQ_RX":53,"./GRIDSQUARE":55,"./GRIDSQUARE_EXT":56,"./HAMLOGEU_QSO_UPLOAD_DATE":57,"./HAMLOGEU_QSO_UPLOAD_STATUS":58,"./HAMQTH_QSO_UPLOAD_DATE":59,"./HAMQTH_QSO_UPLOAD_STATUS":60,"./HRDLOG_QSO_UPLOAD_DATE":61,"./HRDLOG_QSO_UPLOAD_STATUS":62,"./IOTA":63,"./IOTA_ISLAND_ID":64,"./ITUZ":65,"./K_INDEX":66,"./LAT":67,"./LON":68,"./LOTW_QSLRDATE":69,"./LOTW_QSLSDATE":70,"./LOTW_QSL_RCVD":71,"./LOTW_QSL_SENT":72,"./MAX_BURSTS":73,"./MODE":74,"./MS_SHOWER":75,"./MY_ALTITUDE":76,"./MY_ANTENNA":77,"./MY_ARRL_SECT":78,"./MY_CITY":79,"./MY_CNTY":80,"./MY_COUNTRY":81,"./MY_CQ_ZONE":82,"./MY_DXCC":83,"./MY_FISTS":84,"./MY_GRIDSQUARE":85,"./MY_GRIDSQUARE_EXT":86,"./MY_IOTA":87,"./MY_IOTA_ISLAND_ID":88,"./MY_ITU_ZONE":89,"./MY_LAT":90,"./MY_LON":91,"./MY_NAME":92,"./MY_POSTAL_CODE":93,"./MY_POTA_REF":94,"./MY_RIG":95,"./MY_SIG":96,"./MY_SIG_INFO":97,"./MY_SOTA_REF":98,"./MY_STATE":99,"./MY_STREET":100,"./MY_USACA_COUNTIES":101,"./MY_VUCC_GRIDS":102,"./MY_WWFF_REF":103,"./NAME":104,"./NOTES":105,"./NR_BURSTS":106,"./NR_PINGS":107,"./OPERATOR":108,"./OWNER_CALLSIGN":109,"./PFX":110,"./POTA_REF":111,"./PRECEDENCE":112,"./PROGRAMID":113,"./PROGRAMVERSION":114,"./PROP_MODE":115,"./PUBLIC_KEY":116,"./QRZCOM_QSO_UPLOAD_DATE":117,"./QRZCOM_QSO_UPLOAD_STATUS":118,"./QSLMSG":119,"./QSLRDATE":120,"./QSLSDATE":121,"./QSL_RCVD":122,"./QSL_RCVD_VIA":123,"./QSL_SENT":124,"./QSL_SENT_VIA":125,"./QSL_VIA":126,"./QSO_COMPLETE":127,"./QSO_DATE":128,"./QSO_DATE_OFF":129,"./QSO_RANDOM":130,"./QTH":131,"./REGION":132,"./RIG":133,"./RST_RCVD":134,"./RST_SENT":135,"./RX_PWR":136,"./SAT_MODE":137,"./SAT_NAME":138,"./SFI":139,"./SIG":140,"./SIG_INFO":141,"./SILENT_KEY":142,"./SKCC":143,"./SOTA_REF":144,"./SRX":145,"./SRX_STRING":146,"./STATE":147,"./STATION_CALLSIGN":148,"./STX":149,"./STX_STRING":150,"./SUBMODE":151,"./SWL":152,"./TEN_TEN":153,"./TIME_OFF":154,"./TIME_ON":155,"./TX_PWR":156,"./UKSMG":157,"./USACA_COUNTIES":158,"./VUCC_GRIDS":159,"./WEB":160,"./WWFF_REF":161}],163:[function(require,module,exports){
+},{"./ADDRESS":9,"./ADIF_VER":10,"./AGE":11,"./ALTITUDE":12,"./ANT_AZ":13,"./ANT_EL":14,"./ANT_PATH":15,"./APP_TCADIF_KEY":16,"./APP_TCADIF_KEY_INFO":17,"./APP_TCADIF_LICW":18,"./APP_TCADIF_MY_KEY":19,"./APP_TCADIF_MY_KEY_INFO":20,"./APP_TCADIF_QSO_ID":21,"./ARRL_SECT":22,"./AWARD_GRANTED":23,"./AWARD_SUBMITTED":24,"./A_INDEX":25,"./BAND":26,"./BAND_RX":27,"./CALL":28,"./CHECK":29,"./CLASS":30,"./CLUBLOG_QSO_UPLOAD_DATE":31,"./CLUBLOG_QSO_UPLOAD_STATUS":32,"./CNTY":33,"./COMMENT":34,"./CONT":35,"./CONTACTED_OP":36,"./CONTEST_ID":37,"./COUNTRY":38,"./CQZ":39,"./CREATED_TIMESTAMP":40,"./CREDIT_GRANTED":41,"./CREDIT_SUBMITTED":42,"./DARC_DOK":43,"./DISTANCE":44,"./DXCC":45,"./EMAIL":46,"./EQSL_QSLRDATE":47,"./EQSL_QSLSDATE":48,"./EQSL_QSL_RCVD":49,"./EQSL_QSL_SENT":50,"./EQ_CALL":51,"./FISTS":52,"./FISTS_CC":53,"./FORCE_INIT":54,"./FREQ":55,"./FREQ_RX":56,"./GRIDSQUARE":58,"./GRIDSQUARE_EXT":59,"./HAMLOGEU_QSO_UPLOAD_DATE":60,"./HAMLOGEU_QSO_UPLOAD_STATUS":61,"./HAMQTH_QSO_UPLOAD_DATE":62,"./HAMQTH_QSO_UPLOAD_STATUS":63,"./HRDLOG_QSO_UPLOAD_DATE":64,"./HRDLOG_QSO_UPLOAD_STATUS":65,"./IOTA":66,"./IOTA_ISLAND_ID":67,"./ITUZ":68,"./K_INDEX":69,"./LAT":70,"./LON":71,"./LOTW_QSLRDATE":72,"./LOTW_QSLSDATE":73,"./LOTW_QSL_RCVD":74,"./LOTW_QSL_SENT":75,"./MAX_BURSTS":76,"./MODE":77,"./MS_SHOWER":78,"./MY_ALTITUDE":79,"./MY_ANTENNA":80,"./MY_ARRL_SECT":81,"./MY_CITY":82,"./MY_CNTY":83,"./MY_COUNTRY":84,"./MY_CQ_ZONE":85,"./MY_DXCC":86,"./MY_FISTS":87,"./MY_GRIDSQUARE":88,"./MY_GRIDSQUARE_EXT":89,"./MY_IOTA":90,"./MY_IOTA_ISLAND_ID":91,"./MY_ITU_ZONE":92,"./MY_LAT":93,"./MY_LON":94,"./MY_NAME":95,"./MY_POSTAL_CODE":96,"./MY_POTA_REF":97,"./MY_RIG":98,"./MY_SIG":99,"./MY_SIG_INFO":100,"./MY_SOTA_REF":101,"./MY_STATE":102,"./MY_STREET":103,"./MY_USACA_COUNTIES":104,"./MY_VUCC_GRIDS":105,"./MY_WWFF_REF":106,"./NAME":107,"./NOTES":108,"./NR_BURSTS":109,"./NR_PINGS":110,"./OPERATOR":111,"./OWNER_CALLSIGN":112,"./PFX":113,"./POTA_REF":114,"./PRECEDENCE":115,"./PROGRAMID":116,"./PROGRAMVERSION":117,"./PROP_MODE":118,"./PUBLIC_KEY":119,"./QRZCOM_QSO_UPLOAD_DATE":120,"./QRZCOM_QSO_UPLOAD_STATUS":121,"./QSLMSG":122,"./QSLRDATE":123,"./QSLSDATE":124,"./QSL_RCVD":125,"./QSL_RCVD_VIA":126,"./QSL_SENT":127,"./QSL_SENT_VIA":128,"./QSL_VIA":129,"./QSO_COMPLETE":130,"./QSO_DATE":131,"./QSO_DATE_OFF":132,"./QSO_RANDOM":133,"./QTH":134,"./REGION":135,"./RIG":136,"./RST_RCVD":137,"./RST_SENT":138,"./RX_PWR":139,"./SAT_MODE":140,"./SAT_NAME":141,"./SFI":142,"./SIG":143,"./SIG_INFO":144,"./SILENT_KEY":145,"./SKCC":146,"./SOTA_REF":147,"./SRX":148,"./SRX_STRING":149,"./STATE":150,"./STATION_CALLSIGN":151,"./STX":152,"./STX_STRING":153,"./SUBMODE":154,"./SWL":155,"./TEN_TEN":156,"./TIME_OFF":157,"./TIME_ON":158,"./TX_PWR":159,"./UKSMG":160,"./USACA_COUNTIES":161,"./VUCC_GRIDS":162,"./WEB":163,"./WWFF_REF":164}],166:[function(require,module,exports){
 'use strict';
 
 // III.B.1 Ant Path Enumeration
@@ -3518,7 +3575,7 @@ module.exports = {
     'L': 'long path',
 };
 
-},{}],164:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 'use strict';
 
 // App TCADIF Key Enumeration
@@ -3528,9 +3585,10 @@ module.exports = {
     BUG: "Bug",
     SLP: "Single-Lever Paddle",
     DLP: "Dual-Lever Paddle",
+    CPU: "Computer",
 };
 
-},{}],165:[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 'use strict';
 
 // III.B.2 ARRL Section Enumeration
@@ -3623,7 +3681,7 @@ module.exports = {
     "WY": "Wyoming",
 };
 
-},{}],166:[function(require,module,exports){
+},{}],169:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -3662,7 +3720,7 @@ module.exports = {
     "submm": { "lowerFreq": "300000", "upperFreq": "7500000"},
 };
 
-},{}],167:[function(require,module,exports){
+},{}],170:[function(require,module,exports){
 'use strict';
 
 // III.B.5 Contest ID Enumeration
@@ -3902,7 +3960,7 @@ module.exports = {
     "YUDXC ": "YU DX Contest",
 };
 
-},{}],168:[function(require,module,exports){
+},{}],171:[function(require,module,exports){
 'use strict';
 
 // III.B.6 Continent Enumeration
@@ -3916,7 +3974,7 @@ module.exports = {
     "AN":   "Antarctica",
 };
 
-},{}],169:[function(require,module,exports){
+},{}],172:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -3993,7 +4051,7 @@ module.exports = {
     "WITUZ_BAND": "RSGB Worked ITU Zones (WITUZ) Band",
 };
 
-},{}],170:[function(require,module,exports){
+},{}],173:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -4402,7 +4460,7 @@ module.exports = {
     "522": "REPUBLIC OF KOSOVO",
 };
 
-},{}],171:[function(require,module,exports){
+},{}],174:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -4454,7 +4512,7 @@ module.exports = {
     "WSPR": "WSPR",
 };
 
-},{}],172:[function(require,module,exports){
+},{}],175:[function(require,module,exports){
 'use strict';
 
 // III.B.13 Propagation Mode Enumeration
@@ -4481,7 +4539,7 @@ module.exports = {
     'TR':       'Tropospheric ducting',
 };
 
-},{}],173:[function(require,module,exports){
+},{}],176:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -4490,7 +4548,7 @@ module.exports = {
     "LOTW": "QSO confirmation via ARRL Logbook of the World",
 };
 
-},{}],174:[function(require,module,exports){
+},{}],177:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -4501,7 +4559,7 @@ module.exports = {
     "V": "verified",
 };
 
-},{}],175:[function(require,module,exports){
+},{}],178:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -4512,7 +4570,7 @@ module.exports = {
     "I": "ignore or invalid",
 };
 
-},{}],176:[function(require,module,exports){
+},{}],179:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -4522,7 +4580,7 @@ module.exports = {
     "M": "manager",
 };
 
-},{}],177:[function(require,module,exports){
+},{}],180:[function(require,module,exports){
 'use strict';
 
 // III.B.18 QSO Complete Enumeration
@@ -4533,7 +4591,7 @@ module.exports = {
     '?':    'uncertain',
 };
 
-},{}],178:[function(require,module,exports){
+},{}],181:[function(require,module,exports){
 'use strict';
 
 // III.B.19 QSO Upload Status Enumeration
@@ -4543,7 +4601,7 @@ module.exports = {
     "M":    "the QSO has been modified since being uploaded to the online service",
 };
 
-},{}],179:[function(require,module,exports){
+},{}],182:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -4557,7 +4615,7 @@ module.exports = {
     "ET": "European Turkey",
 };
 
-},{}],180:[function(require,module,exports){
+},{}],183:[function(require,module,exports){
 'use strict';
 
 const AntPath = require('./AntPath');
@@ -4598,7 +4656,7 @@ module.exports = {
     Region,
 };
 
-},{"./AntPath":163,"./AppTcadifKey":164,"./ArrlSection":165,"./Band":166,"./ContestID":167,"./Continent":168,"./Credit":169,"./Dxcc":170,"./Mode":171,"./PropagationMode":172,"./QslMedium":173,"./QslRcvd":174,"./QslSent":175,"./QslVia":176,"./QsoComplete":177,"./QsoUploadStatus":178,"./Region":179}],181:[function(require,module,exports){
+},{"./AntPath":166,"./AppTcadifKey":167,"./ArrlSection":168,"./Band":169,"./ContestID":170,"./Continent":171,"./Credit":172,"./Dxcc":173,"./Mode":174,"./PropagationMode":175,"./QslMedium":176,"./QslRcvd":177,"./QslSent":178,"./QslVia":179,"./QsoComplete":180,"./QsoUploadStatus":181,"./Region":182}],184:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -4750,9 +4808,9 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],182:[function(require,module,exports){
+},{}],185:[function(require,module,exports){
 
-},{}],183:[function(require,module,exports){
+},{}],186:[function(require,module,exports){
 (function (Buffer){(function (){
 /*!
  * The buffer module from node.js, for the browser.
@@ -6533,7 +6591,7 @@ function numberIsNaN (obj) {
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"base64-js":181,"buffer":183,"ieee754":185}],184:[function(require,module,exports){
+},{"base64-js":184,"buffer":186,"ieee754":188}],187:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -7032,7 +7090,7 @@ function eventTargetAgnosticAddListener(emitter, name, listener, flags) {
   }
 }
 
-},{}],185:[function(require,module,exports){
+},{}],188:[function(require,module,exports){
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -7119,7 +7177,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],186:[function(require,module,exports){
+},{}],189:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -7148,7 +7206,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],187:[function(require,module,exports){
+},{}],190:[function(require,module,exports){
 //! moment.js
 //! version : 2.29.4
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -12835,7 +12893,7 @@ if (typeof Object.create === 'function') {
 
 })));
 
-},{}],188:[function(require,module,exports){
+},{}],191:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -13021,7 +13079,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],189:[function(require,module,exports){
+},{}],192:[function(require,module,exports){
 /*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 /* eslint-disable node/no-deprecated-api */
 var buffer = require('buffer')
@@ -13088,7 +13146,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
   return buffer.SlowBuffer(size)
 }
 
-},{"buffer":183}],190:[function(require,module,exports){
+},{"buffer":186}],193:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -13219,7 +13277,7 @@ Stream.prototype.pipe = function(dest, options) {
   return dest;
 };
 
-},{"events":184,"inherits":186,"readable-stream/lib/_stream_duplex.js":192,"readable-stream/lib/_stream_passthrough.js":193,"readable-stream/lib/_stream_readable.js":194,"readable-stream/lib/_stream_transform.js":195,"readable-stream/lib/_stream_writable.js":196,"readable-stream/lib/internal/streams/end-of-stream.js":200,"readable-stream/lib/internal/streams/pipeline.js":202}],191:[function(require,module,exports){
+},{"events":187,"inherits":189,"readable-stream/lib/_stream_duplex.js":195,"readable-stream/lib/_stream_passthrough.js":196,"readable-stream/lib/_stream_readable.js":197,"readable-stream/lib/_stream_transform.js":198,"readable-stream/lib/_stream_writable.js":199,"readable-stream/lib/internal/streams/end-of-stream.js":203,"readable-stream/lib/internal/streams/pipeline.js":205}],194:[function(require,module,exports){
 'use strict';
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
@@ -13348,7 +13406,7 @@ createErrorType('ERR_UNKNOWN_ENCODING', function (arg) {
 createErrorType('ERR_STREAM_UNSHIFT_AFTER_END_EVENT', 'stream.unshift() after end event');
 module.exports.codes = codes;
 
-},{}],192:[function(require,module,exports){
+},{}],195:[function(require,module,exports){
 (function (process){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -13477,7 +13535,7 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
   }
 });
 }).call(this)}).call(this,require('_process'))
-},{"./_stream_readable":194,"./_stream_writable":196,"_process":188,"inherits":186}],193:[function(require,module,exports){
+},{"./_stream_readable":197,"./_stream_writable":199,"_process":191,"inherits":189}],196:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -13515,7 +13573,7 @@ function PassThrough(options) {
 PassThrough.prototype._transform = function (chunk, encoding, cb) {
   cb(null, chunk);
 };
-},{"./_stream_transform":195,"inherits":186}],194:[function(require,module,exports){
+},{"./_stream_transform":198,"inherits":189}],197:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -14545,7 +14603,7 @@ function indexOf(xs, x) {
   return -1;
 }
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../errors":191,"./_stream_duplex":192,"./internal/streams/async_iterator":197,"./internal/streams/buffer_list":198,"./internal/streams/destroy":199,"./internal/streams/from":201,"./internal/streams/state":203,"./internal/streams/stream":204,"_process":188,"buffer":183,"events":184,"inherits":186,"string_decoder/":205,"util":182}],195:[function(require,module,exports){
+},{"../errors":194,"./_stream_duplex":195,"./internal/streams/async_iterator":200,"./internal/streams/buffer_list":201,"./internal/streams/destroy":202,"./internal/streams/from":204,"./internal/streams/state":206,"./internal/streams/stream":207,"_process":191,"buffer":186,"events":187,"inherits":189,"string_decoder/":208,"util":185}],198:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -14736,7 +14794,7 @@ function done(stream, er, data) {
   if (stream._transformState.transforming) throw new ERR_TRANSFORM_ALREADY_TRANSFORMING();
   return stream.push(null);
 }
-},{"../errors":191,"./_stream_duplex":192,"inherits":186}],196:[function(require,module,exports){
+},{"../errors":194,"./_stream_duplex":195,"inherits":189}],199:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -15380,7 +15438,7 @@ Writable.prototype._destroy = function (err, cb) {
   cb(err);
 };
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../errors":191,"./_stream_duplex":192,"./internal/streams/destroy":199,"./internal/streams/state":203,"./internal/streams/stream":204,"_process":188,"buffer":183,"inherits":186,"util-deprecate":206}],197:[function(require,module,exports){
+},{"../errors":194,"./_stream_duplex":195,"./internal/streams/destroy":202,"./internal/streams/state":206,"./internal/streams/stream":207,"_process":191,"buffer":186,"inherits":189,"util-deprecate":209}],200:[function(require,module,exports){
 (function (process){(function (){
 'use strict';
 
@@ -15563,7 +15621,7 @@ var createReadableStreamAsyncIterator = function createReadableStreamAsyncIterat
 };
 module.exports = createReadableStreamAsyncIterator;
 }).call(this)}).call(this,require('_process'))
-},{"./end-of-stream":200,"_process":188}],198:[function(require,module,exports){
+},{"./end-of-stream":203,"_process":191}],201:[function(require,module,exports){
 'use strict';
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -15747,7 +15805,7 @@ module.exports = /*#__PURE__*/function () {
   }]);
   return BufferList;
 }();
-},{"buffer":183,"util":182}],199:[function(require,module,exports){
+},{"buffer":186,"util":185}],202:[function(require,module,exports){
 (function (process){(function (){
 'use strict';
 
@@ -15846,7 +15904,7 @@ module.exports = {
   errorOrDestroy: errorOrDestroy
 };
 }).call(this)}).call(this,require('_process'))
-},{"_process":188}],200:[function(require,module,exports){
+},{"_process":191}],203:[function(require,module,exports){
 // Ported from https://github.com/mafintosh/end-of-stream with
 // permission from the author, Mathias Buus (@mafintosh).
 
@@ -15933,12 +15991,12 @@ function eos(stream, opts, callback) {
   };
 }
 module.exports = eos;
-},{"../../../errors":191}],201:[function(require,module,exports){
+},{"../../../errors":194}],204:[function(require,module,exports){
 module.exports = function () {
   throw new Error('Readable.from is not available in the browser')
 };
 
-},{}],202:[function(require,module,exports){
+},{}],205:[function(require,module,exports){
 // Ported from https://github.com/mafintosh/pump with
 // permission from the author, Mathias Buus (@mafintosh).
 
@@ -16025,7 +16083,7 @@ function pipeline() {
   return streams.reduce(pipe);
 }
 module.exports = pipeline;
-},{"../../../errors":191,"./end-of-stream":200}],203:[function(require,module,exports){
+},{"../../../errors":194,"./end-of-stream":203}],206:[function(require,module,exports){
 'use strict';
 
 var ERR_INVALID_OPT_VALUE = require('../../../errors').codes.ERR_INVALID_OPT_VALUE;
@@ -16048,10 +16106,10 @@ function getHighWaterMark(state, options, duplexKey, isDuplex) {
 module.exports = {
   getHighWaterMark: getHighWaterMark
 };
-},{"../../../errors":191}],204:[function(require,module,exports){
+},{"../../../errors":194}],207:[function(require,module,exports){
 module.exports = require('events').EventEmitter;
 
-},{"events":184}],205:[function(require,module,exports){
+},{"events":187}],208:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -16348,7 +16406,7 @@ function simpleWrite(buf) {
 function simpleEnd(buf) {
   return buf && buf.length ? this.write(buf) : '';
 }
-},{"safe-buffer":189}],206:[function(require,module,exports){
+},{"safe-buffer":192}],209:[function(require,module,exports){
 (function (global){(function (){
 
 /**
@@ -16419,7 +16477,7 @@ function config (name) {
 }
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],207:[function(require,module,exports){
+},{}],210:[function(require,module,exports){
 module.exports={
   "name": "tcadif",
   "version": "1.4.1",
@@ -16480,4 +16538,4 @@ module.exports = {
     enums,
 };
 
-},{"./lib/AdifReader":2,"./lib/AdifWriter":3,"./lib/Field":5,"./lib/Header":6,"./lib/QSO":7,"./lib/Version":8,"./lib/defs":162,"./lib/enums":180}]},{},[]);
+},{"./lib/AdifReader":2,"./lib/AdifWriter":3,"./lib/Field":5,"./lib/Header":6,"./lib/QSO":7,"./lib/Version":8,"./lib/defs":165,"./lib/enums":183}]},{},[]);
