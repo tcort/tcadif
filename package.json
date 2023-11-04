@@ -1,6 +1,6 @@
 {
   "name": "tcadif",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "read and write Amateur Data Interchange Format (ADIF)",
   "main": "index.js",
   "scripts": {
