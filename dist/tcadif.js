@@ -412,6 +412,7 @@ const defs = require('./defs');
 const DataTypes = require('./DataTypes');
 const Field = require('./Field');
 const os = require('os');
+const pkg = require('../package.json');
 
 class Header {
 
@@ -461,7 +462,7 @@ class Header {
 
 module.exports = Header;
 
-},{"./AdifError":2,"./DataTypes":5,"./Field":6,"./defs":166,"os":192}],8:[function(require,module,exports){
+},{"../package.json":212,"./AdifError":2,"./DataTypes":5,"./Field":6,"./defs":166,"os":192}],8:[function(require,module,exports){
 'use strict';
 
 const AdifError = require('./AdifError');
@@ -16645,7 +16646,7 @@ function config (name) {
 },{}],212:[function(require,module,exports){
 module.exports={
   "name": "tcadif",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "read and write Amateur Data Interchange Format (ADIF)",
   "main": "index.js",
   "scripts": {
