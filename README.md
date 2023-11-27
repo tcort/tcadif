@@ -4,9 +4,7 @@ Read and write data in Amateur Data Interchange Format (ADIF) with node.js.
 
 ## Examples
 
-### Synchronous ADIF Reading and Writing
-
-#### Reading
+### Reading
 
 To parse ADIF text, simply call `ADIF.parse(text)`. The result is an ADIF
 instance. To transform it into a plain old JavaScript object, call `.toObject();`
@@ -23,7 +21,7 @@ const adif = ADIF.parse(input);
 console.log(adif.toObject());
 ```
 
-#### Writing
+### Writing
 
 To write ADIF text, simply instantiate an ADIF instance with an optional header
 and qsos. Then call `.stringify()`.
@@ -68,74 +66,6 @@ console.log(adif.stringify());
 - `verbosity` - controls which fields are included in the output
  - `full` - all fields (default).
  - `compact` - only the required fields `QSO_DATE`, `TIME_ON`, `CALL`, `BAND` or `FREQ`, and `MODE`.
-
-### Streaming ADIF Reading and Writing
-
-#### AdifReader
-
-Read a text stream and ouputs an object stream:
-
-```
-'use strict';
-
-const { AdifReader } = require('tcadif');
-const fs = require('fs');
-const path = require('path');
-
-const input = fs.createReadStream(path.join(__dirname, 'sample.adi'));
-const reader = new AdifReader();
-
-reader.on('data', record => console.log('data', record));
-reader.on('error', err => console.error('err', err));
-
-input.pipe(reader);
-```
-
-#### AdifWriter
-
-Reads an object stream and outputs a text stream:
-
-```
-'use strict';
-
-const { AdifWriter } = require('tcadif');
-
-const writer = new AdifWriter();
-
-writer.pipe(process.stdout);
-
-writer.write({
-    BAND: '20m',
-    CALL: 'VA2EPR',
-    MODE: 'CW',
-    QSO_DATE: '20230306',
-    TIME_ON: '1728',
-    OPERATOR: 'VA2NW',
-});
-```
-
-#### Passthrough
-
-Reads a text stream, transforms it into an object stream, transforms it
-back into a text stream, and writes a text stream:
-
-```
-'use strict';
-
-const { AdifReader, AdifWriter } = require('tcadif');
-const fs = require('fs');
-const path = require('path');
-
-const input  = fs.createReadStream(path.join(__dirname, 'sample.adi'));
-const reader = new AdifReader();
-const writer = new AdifWriter();
-const output = fs.createWriteStream(path.join(__dirname, 'sample-2.adi'));
-
-input
-    .pipe(reader)
-    .pipe(writer)
-    .pipe(output);
-```
 
 ## Application-defined Fields
 
