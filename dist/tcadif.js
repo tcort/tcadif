@@ -74,10 +74,11 @@ class ADIF {
         options.recordDelim = options?.recordDelim ?? `${os.EOL}${os.EOL}`;
         options.programName = options?.programName ?? `${pkg.name}`;
         options.programVersion = options?.programVersion ?? `${pkg.version}`;
+        options.verbosity = options?.verbosity ?? 'full';
 
         const result = [];
 
-        if (this.#header) {
+        if (this.#header && options.verbosity !== 'compact') {
             result.push(this.#header.stringify(options));
         }
 
@@ -507,12 +508,17 @@ class QSO {
 
     stringify(options = {}) {
 
+        const compactFields = [ 'QSO_DATE', 'TIME_ON', 'CALL', 'BAND', 'FREQ', 'MODE' ];
+
         options = options ?? {};
         options.fieldDelim = options?.fieldDelim ?? `${os.EOL}`;
         options.recordDelim = options?.recordDelim ?? `${os.EOL}${os.EOL}`;
+        options.verbosity = options?.verbosity ?? 'full';
 
         return QSO.defs
             .filter(def => this.#data[def.fieldName] !== undefined)
+            .filter(def => options.verbosity === 'compact' ? compactFields.includes(def.fieldName) : true)
+            .filter(def => options.verbosity === 'compact' ? ((def.fieldName !== 'FREQ') || (def.fieldName === 'FREQ' && !(typeof this.#data.BAND === 'string' && this.#data.BAND.length > 0))) : true)
             .map(def => Field.stringify(def.fieldName, def.dataTypeIndicator, this.#data[def.fieldName]))
             .concat([ new Field('EOR').stringify() ]).join(options.fieldDelim);
     }
@@ -16680,7 +16686,9 @@ module.exports={
     "expect.js": "^0.3.1",
     "mocha": "^10.2.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
 }
 
 },{}],"tcadif":[function(require,module,exports){
