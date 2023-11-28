@@ -4711,7 +4711,7 @@ exports.homedir = function () {
 },{}],184:[function(require,module,exports){
 module.exports={
   "name": "tcadif",
-  "version": "1.8.1",
+  "version": "2.0.0",
   "description": "read and write Amateur Data Interchange Format (ADIF)",
   "main": "index.js",
   "scripts": {
@@ -4745,7 +4745,7 @@ module.exports={
     "expect.js": "^0.3.1",
     "mocha": "^10.2.0"
   },
-  "dependencies": { }
+  "dependencies": {}
 }
 
 },{}],"tcadif":[function(require,module,exports){
