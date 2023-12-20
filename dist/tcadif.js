@@ -16655,6 +16655,9 @@ module.exports={
   "version": "2.1.0",
   "description": "read and write Amateur Data Interchange Format (ADIF)",
   "main": "index.js",
+  "bin": {
+    "tcadif": "bin/tcadif.js"
+  },
   "scripts": {
     "prepare": "browserify -r ./index.js:tcadif -o ./dist/tcadif.js",
     "test": "mocha"
