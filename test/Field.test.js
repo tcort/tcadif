@@ -17,6 +17,8 @@ describe('Field', function () {
         });
         it('should stringify some data', function () {
             expect(Field.stringify('call','S','VA2NW')).to.be('<CALL:5:S>VA2NW');
+            expect(Field.stringify('call','S','K3Y')).to.be('<CALL:3:S>K3Y');
+            expect(Field.stringify('call','S','XX1X')).to.be('<CALL:4:S>XX1X');
         });
     });
 });
