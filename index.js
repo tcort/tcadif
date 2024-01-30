@@ -9,10 +9,12 @@ const ADIF = require('./lib/ADIF');
 const Version = require('./lib/Version');
 const defs = require('./lib/defs');
 const enums = require('./lib/enums');
+const transforms = require('./lib/transforms');
 
 module.exports = {
     AdifReader, AdifWriter,
     ADIF, Field, Header, QSO, Version,
     defs,
     enums,
+    transforms,
 };
