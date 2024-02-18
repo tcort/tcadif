@@ -45,5 +45,17 @@ describe('defs', function () {
                 });
             });
         });
+        describe('RX_PWR', function () {
+            describe('.normalize(value)', function () {
+                it('normalize cut numbers', function () {
+                    const rxPwr = new defs.qso.RX_PWR();
+                    expect(rxPwr.normalize('ATT')).to.be('100');
+                    expect(rxPwr.normalize('4TT')).to.be('400');
+                    expect(rxPwr.normalize('5TT')).to.be('500');
+                    expect(rxPwr.normalize('K')).to.be('1000');
+                    expect(rxPwr.normalize('KW')).to.be('1000');
+                });
+            });
+        });
     });
 });
