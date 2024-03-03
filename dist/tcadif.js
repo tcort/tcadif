@@ -4029,6 +4029,7 @@ module.exports = {
     "IOTA_GROUP": "RSGB Islands on the Air (IOTA) Group",
     "RDA": "TAG Russian Districts Award (RDA) Mixed",
     "USACA": "CQ Magazine United States of America Counties (USA-CA) Mixed",
+    "VUCC": "ARRL VHF/UHF Century Club Program (VUCC)",
     "VUCC_BAND": "ARRL VHF/UHF Century Club Program (VUCC) Band",
     "VUCC_SATELLITE": "ARRL VHF/UHF Century Club Program (VUCC) Satellite",
     "WAB": "WAB AG Worked All Britain (WAB) Mixed",
