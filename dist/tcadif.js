@@ -10982,10 +10982,6 @@ module.exports={
     "browserify": "^17.0.1",
     "expect.js": "^0.3.1",
     "mocha": "^10.8.2"
-  },
-  "dependencies": {
-    "csv-parse": "^5.5.6",
-    "csv-stringify": "^6.5.1"
   }
 }
 
