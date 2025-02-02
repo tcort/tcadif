@@ -58,6 +58,6 @@ describe('ADIF', function () {
     });
     it('.stringify(options)', function () {
         const obj = ADIF.parse(adif);
-        expect(obj.stringify({ verbosity: 'compact', recordDelim: '\n', fieldDelim: ' ' })).to.be('<BAND:3:E>10m <CALL:6:S>CX5ABM <MODE:3:E>FT8 <QSO_DATE:8:D>20231103 <TIME_ON:6:T>203615 <EOR>');
+        expect(obj.stringify({ verbosity: 'compact', recordDelim: '\n', fieldDelim: ' ' })).to.be('<BAND:3:E>10M <CALL:6:S>CX5ABM <MODE:3:E>FT8 <QSO_DATE:8:D>20231103 <TIME_ON:6:T>203615 <EOR>');
     });
 });
