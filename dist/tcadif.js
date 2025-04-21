@@ -16652,7 +16652,7 @@ function config (name) {
 },{}],212:[function(require,module,exports){
 module.exports={
   "name": "tcadif",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "read and write Amateur Data Interchange Format (ADIF)",
   "main": "index.js",
   "scripts": {
