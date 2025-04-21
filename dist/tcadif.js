@@ -4741,13 +4741,11 @@ module.exports={
   },
   "homepage": "https://github.com/tcort/tcadif#readme",
   "devDependencies": {
+    "browserify": "^17.0.0",
     "expect.js": "^0.3.1",
     "mocha": "^10.2.0"
   },
-  "dependencies": {
-    "browserify": "^17.0.0",
-    "moment": "^2.29.4"
-  }
+  "dependencies": { }
 }
 
 },{}],"tcadif":[function(require,module,exports){
