@@ -5,6 +5,7 @@ const Field = require('./Field');
 const Header = require('./Header');
 const QSO = require('./QSO');
 const os = require('os');
+const pkg = require('../package.json');
 
 class ADIF {
 
@@ -12,7 +13,7 @@ class ADIF {
     #qsos = [];
 
     constructor(obj = {}) {
-        this.#header = obj?.header ?? null;
+        this.#header = typeof obj?.header === 'object' && obj?.header !== null ? new Header(obj.header) : null;
         this.#qsos = Array.isArray(obj?.qsos) ? obj.qsos.map(qso => qso instanceof QSO ? qso : new QSO(qso)) : [];
     }
 
@@ -66,17 +67,23 @@ class ADIF {
         return adif;
     }
 
-    stringify() {
+    stringify(options = {}) {
+
+        options = options ?? {};
+        options.fieldDelim = options?.fieldDelim ?? `${os.EOL}`;
+        options.recordDelim = options?.recordDelim ?? `${os.EOL}${os.EOL}`;
+        options.programName = options?.programName ?? `${pkg.name}`;
+        options.programVersion = options?.programVersion ?? `${pkg.version}`;
 
         const result = [];
 
         if (this.#header) {
-            result.push(this.#header.stringify());
+            result.push(this.#header.stringify(options));
         }
 
-        this.#qsos.forEach(qso => result.push(qso.stringify()));
+        this.#qsos.forEach(qso => result.push(qso.stringify(options)));
 
-        return result.join(`${os.EOL}${os.EOL}`);
+        return result.join(options.recordDelim);
     }
 
     get header() {
@@ -91,7 +98,7 @@ class ADIF {
 
 module.exports = ADIF;
 
-},{"./Field":6,"./Header":7,"./QSO":8,"os":192}],2:[function(require,module,exports){
+},{"../package.json":212,"./Field":6,"./Header":7,"./QSO":8,"os":192}],2:[function(require,module,exports){
 'use strict';
 
 class AdifError extends Error {
@@ -405,7 +412,6 @@ const defs = require('./defs');
 const DataTypes = require('./DataTypes');
 const Field = require('./Field');
 const os = require('os');
-const pkg = require('../package.json');
 
 class Header {
 
@@ -436,19 +442,26 @@ class Header {
         }, Object.create(null));
     }
 
-    stringify(banner = `Generated ${new Date().toJSON()} by ${pkg.name}/${pkg.version}`) {
-        return banner + `${os.EOL}${os.EOL}` +
+    stringify(options = {}) {
+
+        options = options ?? {};
+        options.fieldDelim = options?.fieldDelim ?? `${os.EOL}`;
+        options.recordDelim = options?.recordDelim ?? `${os.EOL}${os.EOL}`;
+        options.programName = options?.programName ?? `${pkg.name}`;
+        options.programVersion = options?.programVersion ?? `${pkg.version}`;
+
+        return `Generated ${new Date().toJSON()} by ${options.programName}/${options.programVersion}` + options.recordDelim +
                 Header.defs
                     .filter(def => this.#data[def.fieldName] !== undefined)
                     .map(def => Field.stringify(def.fieldName, def.dataTypeIndicator, this.#data[def.fieldName]))
-                    .concat([ new Field('EOH').stringify() ]).join(os.EOL);
+                    .concat([ new Field('EOH').stringify() ]).join(options.fieldDelim);
     }
 
 }
 
 module.exports = Header;
 
-},{"../package.json":212,"./AdifError":2,"./DataTypes":5,"./Field":6,"./defs":166,"os":192}],8:[function(require,module,exports){
+},{"./AdifError":2,"./DataTypes":5,"./Field":6,"./defs":166,"os":192}],8:[function(require,module,exports){
 'use strict';
 
 const AdifError = require('./AdifError');
@@ -491,11 +504,16 @@ class QSO {
         }, Object.create(null));
     }
 
-    stringify() {
+    stringify(options = {}) {
+
+        options = options ?? {};
+        options.fieldDelim = options?.fieldDelim ?? `${os.EOL}`;
+        options.recordDelim = options?.recordDelim ?? `${os.EOL}${os.EOL}`;
+
         return QSO.defs
             .filter(def => this.#data[def.fieldName] !== undefined)
             .map(def => Field.stringify(def.fieldName, def.dataTypeIndicator, this.#data[def.fieldName]))
-            .concat([ new Field('EOR').stringify() ]).join(os.EOL);
+            .concat([ new Field('EOR').stringify() ]).join(options.fieldDelim);
     }
 
 }
@@ -16627,7 +16645,7 @@ function config (name) {
 },{}],212:[function(require,module,exports){
 module.exports={
   "name": "tcadif",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "description": "read and write Amateur Data Interchange Format (ADIF)",
   "main": "index.js",
   "scripts": {
