@@ -59,6 +59,13 @@ const adif = new ADIF(input);
 console.log(adif.stringify());
 ```
 
+`.stringify(options = {})` accepts an optional object argument which influences the output:
+
+- `fieldDelim` - a string to insert between fields. Default end-of-line sequence (`\n` or `\r\n`).
+- `recordDelim` - a string to insert between records (header and QSOs). Default two end-of-line sequences (`\n` or `\r\n`).
+- `programName` - the name of your application. Defaults to this modules package.name (i.e. `tcadif`).
+- `programVersion` - the version of your application. Defaults to this module's package.version (e.g. `1.6.1`).
+
 ### Streaming ADIF Reading and Writing
 
 #### AdifReader
