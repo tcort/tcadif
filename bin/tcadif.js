@@ -80,9 +80,17 @@ switch (action) {
             const adifReader = new AdifReader();
             const adifWriter = new AdifWriter();
             const filter = new transforms.Filter(qso => qso.SKCC);
+            const map = new transforms.Map(qso => {
+                if (typeof qso.CONTACTED_OP === 'string' && qso.CONTACTED_OP.length > 0) {
+                    qso.CALL = qso.CONTACTED_OP;
+                    qso.CONTACTED_OP = '';
+                }
+                return qso;
+            });
             process.stdin
                 .pipe(adifReader)
                 .pipe(filter)
+                .pipe(map)
                 .pipe(adifWriter)
                 .pipe(process.stdout);
         }
