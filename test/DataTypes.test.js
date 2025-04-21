@@ -251,18 +251,18 @@ describe('DataTypes', function () {
             ['YY', 'A', 'AY99', 'AA2233', 'AA33A', 'FN25ck,FN25dk',  null, undefined, 1, '', '19291231', 'false', 'true', false, new Date(), /x/, '\n'].forEach(value => expect(DataTypes.GridSquareList(value)).to.be(false));
         });
     });
-    describe('.IotaRef(value)', function () {
+    describe('.IotaRefNo(value)', function () {
         it('should be a function', function () {
-            expect(DataTypes.IotaRef).to.be.a('function');
+            expect(DataTypes.IotaRefNo).to.be.a('function');
         });
         it('should accept 1 argument', function () {
-            expect(DataTypes.IotaRef).to.have.length(1);
+            expect(DataTypes.IotaRefNo).to.have.length(1);
         });
         it('should accept valid ref', function () {
-            [ 'NA-136' ].forEach(value => expect(DataTypes.IotaRef(value)).to.be(true));
+            [ 'NA-136' ].forEach(value => expect(DataTypes.IotaRefNo(value)).to.be(true));
         });
         it('should reject all other values', function () {
-            ['FN25ck,FN25dk',  null, undefined, 1, '', 'false', 'true', false, new Date(), /x/, '\n'].forEach(value => expect(DataTypes.IotaRef(value)).to.be(false));
+            ['FN25ck,FN25dk', 'NA-000', 'NA-136 ', null, undefined, 1, '', 'false', 'true', false, new Date(), /x/, '\n'].forEach(value => expect(DataTypes.IotaRefNo(value)).to.be(false));
         });
     });
     describe('.SotaRef(value)', function () {
