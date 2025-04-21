@@ -3,6 +3,9 @@
   "version": "2.1.0",
   "description": "read and write Amateur Data Interchange Format (ADIF)",
   "main": "index.js",
+  "bin": {
+    "tcadif": "bin/tcadif.js"
+  },
   "scripts": {
     "prepare": "browserify -r ./index.js:tcadif -o ./dist/tcadif.js",
     "test": "mocha"
@@ -35,6 +38,8 @@
     "mocha": "^10.2.0"
   },
   "dependencies": {
+    "csv-parse": "^5.5.3",
+    "csv-stringify": "^6.4.5",
     "moment": "^2.29.4"
   }
 }
