@@ -3,6 +3,7 @@
 'use strict';
 
 const {
+    ADIF,
     AdifReader,
     AdifWriter,
 } = require('..');
@@ -13,6 +14,26 @@ const fs = require('fs');
 const [ node, prog, action, ...rest ] = process.argv;
 
 switch (action) {
+
+    case 'combine':
+        const qsos = rest
+                        .map(file => fs.readFileSync(file))
+                        .map(content => content.toString())
+                        .map(text => ADIF.parse(text))
+                        .map(adif => adif.qsos)
+                        .reduce((result, qsos) => result.concat(qsos), [])
+                        .sort((a, b) => {
+                            const ts_a = `${a.QSO_DATE}${a.TIME_ON}`;
+                            const ts_b = `${b.QSO_DATE}${b.TIME_ON}`;
+                            if (ts_a < ts_b) return -1;
+                            if (ts_a > ts_b) return  1;
+                            return 0;
+                        });
+
+        const adif = new ADIF({ qsos });
+        console.log(adif.stringify());
+
+        break;
 
     case 'csv2adif':
         const csvParser = parse({
