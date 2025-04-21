@@ -75,8 +75,10 @@ input
 | Field | Data Type | Sub Type | Description |
 |------------|------|-----|----|
 | `APP_TCADIF_KEY` | `Enumeration` | App TCADIF Key Enumeration | the contacted station's Morse key. |
+| `APP_TCADIF_KEY_INFO` | `String` |  | the contacted station's Morse key information (make, model, etc). |
 | `APP_TCADIF_LICW` | `String` |   | the contacted station's Long Island CW Club (LICW) member information. |
 | `APP_TCADIF_MY_KEY` | `Enumeration` | App TCADIF Key Enumeration | the logging station's Morse key. |
+| `APP_TCADIF_MY_KEY_INFO` | `String` |  | the logging station's Morse key information (make, model, etc). |
 | `APP_TCADIF_QSO_ID` | `Uuid` | App TCADIF QSO Identifier | Universally Unique IDentifier (UUID) for this QSO. |
 
 ### Data Types
