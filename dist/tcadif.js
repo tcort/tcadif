@@ -78,6 +78,14 @@ class ADIF {
         return result.join('\n\n');
     }
 
+    get header() {
+        return new Header(this.#header.toObject());
+    }
+
+    get qsos() {
+        return this.#qsos.map(qso => new QSO(qso.toObject()));
+    }
+
 }
 
 module.exports = ADIF;
@@ -16564,7 +16572,7 @@ function config (name) {
 },{}],211:[function(require,module,exports){
 module.exports={
   "name": "tcadif",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "read and write Amateur Data Interchange Format (ADIF)",
   "main": "index.js",
   "scripts": {
