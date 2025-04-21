@@ -11295,7 +11295,7 @@ module.exports={
   "devDependencies": {
     "browserify": "^17.0.1",
     "expect.js": "^0.3.1",
-    "mocha": "^10.8.2"
+    "mocha": "^11.1.0"
   }
 }
 
