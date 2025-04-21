@@ -4,7 +4,64 @@ Read and write data in Amateur Data Interchange Format (ADIF) with node.js.
 
 ## Examples
 
-###  AdifReader
+### Synchronous ADIF Reading and Writing
+
+#### Reading
+
+To parse ADIF text, simply call `ADIF.parse(text)`. The result is an ADIF
+instance. To transform it into a plain old JavaScript object, call `.toObject();`
+
+```
+const { ADIF } = require('tcadif');
+const fs = require('fs');
+const path = require('path');
+
+const input = fs.readFileSync(path.join(__dirname, 'sample.adi')).toString();
+
+const adif = ADIF.parse(input);
+
+console.log(adif.toObject());
+```
+
+#### Writing
+
+To write ADIF text, simply instantiate an ADIF instance with an optional header
+and qsos. Then call `.stringify()`.
+
+```
+const { ADIF } = require('tcadif');
+const fs = require('fs');
+const path = require('path');
+
+const input = {
+    qsos: [
+        {
+            BAND: '20m',
+            CALL: 'KG9JP',
+            FREQ: '14',
+            MODE: 'SSB',
+            NOTES: 'POTA K-4293 WI',
+            QSL_RCVD: 'N',
+            QSL_SENT: 'N',
+            QSO_DATE: '20230217',
+            QSO_DATE_OFF: '20230217',
+            RST_RCVD: '57',
+            RST_SENT: '59',
+            TIME_OFF: '172600',
+            TIME_ON: '172600',
+            TX_PWR: '20'
+        }
+    ]
+};
+
+const adif = new ADIF(input);
+
+console.log(adif.stringify());
+```
+
+### Streaming ADIF Reading and Writing
+
+#### AdifReader
 
 Read a text stream and ouputs an object stream:
 
@@ -24,7 +81,7 @@ reader.on('error', err => console.error('err', err));
 input.pipe(reader);
 ```
 
-### AdifWriter
+#### AdifWriter
 
 Reads an object stream and outputs a text stream:
 
@@ -47,7 +104,7 @@ writer.write({
 });
 ```
 
-### Passthrough
+#### Passthrough
 
 Reads a text stream, transforms it into an object stream, transforms it
 back into a text stream, and writes a text stream:
@@ -102,5 +159,5 @@ input
 
 - QSO valid requires the following fields: `QSO_DATE`, `TIME_ON`, `CALL`, `BAND` or `FREQ`, `MODE`.
 - Unknown Application-defined Fields, User-defined Fields, and Deprecated Fields are ignored.
-- No referential integrity checks have been implemented (e.g. there are no checks that the state is valid for the country).
+- No referential integrity checks have been implemented (e.g. there are no checks that the state is valid for the country, the band is valid for the frequency, etc)).
 - If a field appears more than once in a record, the last instance is the one used.
