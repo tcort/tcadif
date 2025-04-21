@@ -4,6 +4,11 @@ const Field = require('../lib/Field');
 const expect = require('expect.js');
 
 describe('Fields', function () {
+    describe('ADDRESS', function () {
+        it('should accept a full Canadian address', function () {
+            expect(Field.parse("<ADDRESS:68>Thomas Cort\r\n55 rue de l'Arc-en-Ciel\r\nGatineau, QC J9A 3K5\r\nCanada\r\n").toObject().ADDRESS).to.be("Thomas Cort\r\n55 rue de l'Arc-en-Ciel\r\nGatineau, QC J9A 3K5\r\nCanada\r\n");
+        });
+    });
     describe('AGE', function () {
         it('should accept decimal years', function () {
             expect(Field.parse('<AGE:4>43.2').toObject().AGE).to.be('43.2');
