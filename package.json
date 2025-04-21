@@ -1,0 +1,38 @@
+{
+  "name": "tcadif",
+  "version": "0.0.0",
+  "description": "read and write Amateur Data Interchange Format (ADIF)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcort/tcadif.git"
+  },
+  "keywords": [
+    "adif",
+    "amateur",
+    "radio",
+    "ham",
+    "adi",
+    "data",
+    "format",
+    "log",
+    "logger",
+    "qso"
+  ],
+  "author": "Thomas Cort <linuxgeek@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tcort/tcadif/issues"
+  },
+  "homepage": "https://github.com/tcort/tcadif#readme",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^10.2.0"
+  },
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}
