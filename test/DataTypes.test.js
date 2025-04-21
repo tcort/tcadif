@@ -32,6 +32,26 @@ describe('DataTypes', function () {
             [null, undefined, 1, '', 'false', 'true', false, new Date(), /x/, '\n'].forEach(value => expect(DataTypes.Character(value)).to.be(false));
         });
     });
+    describe('.CreditList(value)', function () {
+        it('should be a function', function () {
+            expect(DataTypes.CreditList).to.be.a('function');
+        });
+        it('should accept 1 argument', function () {
+            expect(DataTypes.CreditList).to.have.length(1);
+        });
+        it('should accept a comma-delimited list of members of the Credit enumeration', function () {
+            [ 'CQWAZ_MIXED', 'CQDXFIELD_QRP,CQDX_QRP', 'EZ40,IOTA_GROUP,WAS' ].forEach(value => expect(DataTypes.CreditList(value)).to.be(true));
+        });
+        it('should accept a comma-delimited list of members of the Credit enumeration with a colon separator followed by an ampersand separated list of members of QSL Medium enumeration', function () {
+            [ 'CQDXFIELD_QRP:CARD', 'CQDXFIELD_QRP:CARD&LOTW', 'CQWAZ_MIXED:CARD,CQDXFIELD_QRP:CARD&LOTW' ].forEach(value => expect(DataTypes.CreditList(value)).to.be(true));
+        });
+        it('should handle mixed lists of both of the above', function () {
+            expect(DataTypes.CreditList('IOTA,WAS:LOTW&CARD,DXCC:CARD')).to.be(true);
+        });
+        it('should rejact all other values', function () {
+            [null, undefined, 1, '', 'false', 'true', false, new Date(), /x/, '\n', 'LOTW', 'WAS:CART', 'POLO:CARD', 'WAS:LOTW&', 'DXCC,CARD' ].forEach(value => expect(DataTypes.CreditList(value)).to.be(false));
+        });
+    });
     describe('.Digit(value)', function () {
         it('should be a function', function () {
             expect(DataTypes.Digit).to.be.a('function');
