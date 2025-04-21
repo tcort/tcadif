@@ -65,6 +65,9 @@ console.log(adif.stringify());
 - `recordDelim` - a string to insert between records (header and QSOs). Default two end-of-line sequences (`\n` or `\r\n`).
 - `programName` - the name of your application. Defaults to this modules package.name (i.e. `tcadif`).
 - `programVersion` - the version of your application. Defaults to this module's package.version (e.g. `1.6.1`).
+- `verbosity` - controls which fields are included in the output
+ - `full` - all fields (default).
+ - `compact` - only the required fields `QSO_DATE`, `TIME_ON`, `CALL`, `BAND` or `FREQ`, and `MODE`.
 
 ### Streaming ADIF Reading and Writing
 
