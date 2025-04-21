@@ -137,34 +137,6 @@ input
     .pipe(output);
 ```
 
-## Application-defined Fields
-
-| Field | Data Type | Sub Type | Description |
-|------------|------|-----|----|
-| `APP_TCADIF_KEY` | `Enumeration` | App TCADIF Key Enumeration | the contacted station's Morse key. |
-| `APP_TCADIF_KEY_INFO` | `String` |  | the contacted station's Morse key information (make, model, etc). |
-| `APP_TCADIF_LICW` | `String` |   | the contacted station's Long Island CW Club (LICW) member information. |
-| `APP_TCADIF_MY_KEY` | `Enumeration` | App TCADIF Key Enumeration | the logging station's Morse key. |
-| `APP_TCADIF_MY_KEY_INFO` | `String` |  | the logging station's Morse key information (make, model, etc). |
-| `APP_TCADIF_QSO_ID` | `Uuid` | App TCADIF QSO Identifier | Universally Unique IDentifier (UUID) for this QSO. |
-
-### Data Types
-
-| Data Type Name | Data Type Indicator | Description |
-|----------------|---------------------|-------------|
-| `Uuid` | | A string representation of a Universally Unique IDentifier. See [RFC4122](https://datatracker.ietf.org/doc/html/rfc4122). |
-
-### App TCADIF Key Enumeration
-
-| Abbreviation | Key |
-|------|-------------|
-| `SK` | Straight key |
-| `SS` | Sideswiper |
-| `BUG` | Bug |
-| `SLP` | Single-Lever Paddle |
-| `DLP` | Dual-Lever Paddle |
-| `CPU` | Computer |
-
 ## ADIF Implementation Notes
 
 - QSO valid requires the following fields: `QSO_DATE`, `TIME_ON`, `CALL`, `BAND` or `FREQ`, `MODE`.
