@@ -11,6 +11,7 @@ const {
 const { parse } = require('csv-parse');
 const { stringify } = require('csv-stringify');
 const fs = require('fs');
+const moment = require('moment');
 const os = require('os');
 
 const [ node, prog, action, ...rest ] = process.argv;
@@ -56,6 +57,24 @@ switch (action) {
                 .pipe(process.stdout);
         }
         break;
+
+    case 'filter-timestamp': {
+            const ts_after = moment(rest[0]);
+            const ts_before = moment(rest[1]);
+            const adifReader = new AdifReader();
+            const adifWriter = new AdifWriter();
+            const filter = new transforms.Filter(qso => {
+                const timestamp = moment(`${qso.QSO_DATE}${qso.TIME_ON}`, 'YYYYMMDDHHmmss');
+                return timestamp.isAfter(ts_after) && timestamp.isBefore(ts_before);
+            });
+            process.stdin
+                .pipe(adifReader)
+                .pipe(filter)
+                .pipe(adifWriter)
+                .pipe(process.stdout);
+        }
+        break;
+
 
     case 'filter-skcc': {
             const adifReader = new AdifReader();
