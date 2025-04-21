@@ -516,10 +516,10 @@ module.exports = ANT_AZ;
 
 const FieldDef = require('./FieldDef');
 
-class ANT_AZ extends FieldDef {
+class ANT_EL extends FieldDef {
     constructor() {
         super({
-            fieldName: 'ANT_AZ',
+            fieldName: 'ANT_EL',
             dataType: 'Number',
             dataTypeIndicator: 'N',
             check: value => -90 <= parseFloat(value) && parseFloat(value) <= 90,
@@ -537,7 +537,7 @@ class ANT_AZ extends FieldDef {
     }
 }
 
-module.exports = ANT_AZ;
+module.exports = ANT_EL;
 
 },{"./FieldDef":54}],15:[function(require,module,exports){
 'use strict';
@@ -1838,8 +1838,24 @@ class MY_CQ_ZONE extends FieldDef {
 module.exports = MY_CQ_ZONE;
 
 },{"./FieldDef":54}],83:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"./FieldDef":54,"dup":42}],84:[function(require,module,exports){
+'use strict';
+
+const FieldDef = require('./FieldDef');
+
+class MY_DXCC extends FieldDef {
+    constructor() {
+        super({
+            fieldName: 'MY_DXCC',
+            dataType: 'Enumeration',
+            dataTypeIndicator: 'E',
+            enumeration: 'Dxcc',
+        });
+    }
+}
+
+module.exports = MY_DXCC;
+
+},{"./FieldDef":54}],84:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -3125,8 +3141,24 @@ class USACA_COUNTIES extends FieldDef {
 module.exports = USACA_COUNTIES;
 
 },{"./FieldDef":54}],159:[function(require,module,exports){
-arguments[4][102][0].apply(exports,arguments)
-},{"./FieldDef":54,"dup":102}],160:[function(require,module,exports){
+'use strict';
+
+const FieldDef = require('./FieldDef');
+
+class VUCC_GRIDS extends FieldDef {
+    constructor() {
+        super({
+            fieldName: 'VUCC_GRIDS',
+            dataType: 'GridSquareList',
+            normalizer: (value) => value?.toUpperCase(),
+            check: value => (value.split(/,/g).length === 2 || value.split(/,/g).length === 4) && value.split(/,/g).every(grid => grid.length === 4),
+        });
+    }
+}
+
+module.exports = VUCC_GRIDS;
+
+},{"./FieldDef":54}],160:[function(require,module,exports){
 'use strict';
 
 const FieldDef = require('./FieldDef');
@@ -16390,7 +16422,7 @@ function config (name) {
 },{}],207:[function(require,module,exports){
 module.exports={
   "name": "tcadif",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "read and write Amateur Data Interchange Format (ADIF)",
   "main": "index.js",
   "scripts": {
