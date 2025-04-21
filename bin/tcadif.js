@@ -6,6 +6,7 @@ const {
     ADIF,
     AdifReader,
     AdifWriter,
+    defs,
     transforms,
 } = require('..');
 const { parse } = require('csv-parse');
@@ -96,6 +97,39 @@ switch (action) {
         }
         break;
 
+    case 'expand-notes': {
+            const adifReader = new AdifReader();
+            const adifWriter = new AdifWriter();
+            const map = new transforms.Map(qso => {
+                (qso.NOTES ?? '')
+                    .split(/\s+/g)
+                    .forEach(part => {
+                        try {
+                            const [ fieldName, value ] = part.split(/=/);
+                            const normalizedFieldName = `${fieldName}`.toUpperCase();
+                            if (defs.qso[normalizedFieldName]) {
+                                const def = new defs.qso[normalizedFieldName]();
+                                def.validate(value);
+                                qso[normalizedFieldName] = value;
+                            }
+                        } catch (err) {
+                            /* not a valid ADIF field, skip */
+                        }
+                    });
+
+                return qso;
+            });
+
+            process.stdin
+                .pipe(adifReader)
+                .pipe(map)
+                .pipe(adifWriter)
+                .pipe(process.stdout);
+
+
+        }
+        break;
+
     case 'csv2adif': {
             const csvParser = parse({
                 columns: true,
@@ -121,6 +155,7 @@ switch (action) {
         break;
 
     default:
+        console.error('usage: tcadif action');
         break;
 }
 
