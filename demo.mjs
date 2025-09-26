@@ -23,6 +23,9 @@ const f = File.fromJSON({
             ANT_PATH: 'L',
             ARRL_SECT: 'VT',
             AWARD_SUBMITTED: 'ARRL_WAS,ADIF_UTF',
+            CLUBLOG_QSO_UPLOAD_STATUS: 'y',
+            COMMENT: 'HI',
+            CONT: 'NA',
         },
     ]
 });
