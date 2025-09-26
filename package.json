@@ -2,14 +2,8 @@
   "name": "tcadif",
   "version": "2.2.1",
   "description": "read and write Amateur Data Interchange Format (ADIF)",
-  "main": "index.js",
-  "bin": {
-    "tcadif": "bin/tcadif.js"
-  },
-  "scripts": {
-    "prepare": "browserify -r ./index.js:tcadif -o ./dist/tcadif.js",
-    "test": "mocha"
-  },
+  "main": "index.mjs",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tcort/tcadif.git"
@@ -31,10 +25,5 @@
   "bugs": {
     "url": "https://github.com/tcort/tcadif/issues"
   },
-  "homepage": "https://github.com/tcort/tcadif#readme",
-  "devDependencies": {
-    "browserify": "^17.0.1",
-    "expect.js": "^0.3.1",
-    "mocha": "^11.7.1"
-  }
+  "homepage": "https://github.com/tcort/tcadif#readme"
 }
