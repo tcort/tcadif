@@ -26,6 +26,10 @@ const f = File.fromJSON({
             CLUBLOG_QSO_UPLOAD_STATUS: 'y',
             COMMENT: 'HI',
             CONT: 'NA',
+            CQZ: '05',
+            EMAIL: 'tcort@tcort.dev',
+            WEB: 'https://www.va2nw.ca/',
+            SKCC: '4889T',
         },
     ]
 });
