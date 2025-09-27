@@ -32,6 +32,8 @@ const f = File.fromJSON({
             SKCC: '4889T',
             MY_MORSE_KEY_TYPE: 'SK',
             MORSE_KEY_TYPE: 'BUG',
+            CREDIT_SUBMITTED: 'IOTA,WAS:LOTW&CARD,DXCC:CARD',
+            CREDIT_GRANTED: 'AJA',
         },
     ]
 });
