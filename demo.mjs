@@ -30,6 +30,8 @@ const f = File.fromJSON({
             EMAIL: 'tcort@tcort.dev',
             WEB: 'https://www.va2nw.ca/',
             SKCC: '4889T',
+            MY_MORSE_KEY_TYPE: 'SK',
+            MORSE_KEY_TYPE: 'BUG',
         },
     ]
 });
