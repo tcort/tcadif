@@ -16,6 +16,11 @@ Read and write data in Amateur Data Interchange Format (ADIF) with JavaScript.
  - `COUNTRY` value corresponds to `DXCC` value when both are provided.
  - `STATE` value is valid for `DXCC` when both are provided.
  - etc, etc.
+- no validation beyond what the specification prescribes. For example:
+ - there is no check that `FREQ` is not negative.
+ - there is no check that `LAT` is not a `Location` with `E` nor `W`.
+ - there is no check that `LON` is not a `Location` with `N` nor `S`.
+ - etc, etc. 
 - no automatic conversions for deprecated fields.
  - `GUEST_OP` value isn't moved to `OPERATOR`
  - `VE_PROV` value isn't moved to `STATE`

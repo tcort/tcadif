@@ -46,6 +46,10 @@ const f = File.fromJSON({
             FREQ: '14.050',
             GRIDSQUARE: 'FN25ck',
             IOTA: 'NA-136',
+            LAT: 'N123 45.678',
+            LON: 'E123 45.678',
+            MY_LAT: 'N123 45.678',
+            MY_LON: 'E123 45.678',
         },
     ]
 });
