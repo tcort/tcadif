@@ -34,6 +34,8 @@ const f = File.fromJSON({
             MORSE_KEY_TYPE: 'BUG',
             CREDIT_SUBMITTED: 'IOTA,WAS:LOTW&CARD,DXCC:CARD',
             CREDIT_GRANTED: 'AJA',
+            DARC_DOK: 'Z84',
+            MY_DARC_DOK: 'Z84',
         },
     ]
 });
