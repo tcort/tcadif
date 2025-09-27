@@ -25,7 +25,7 @@ const f = File.fromJSON({
             AWARD_SUBMITTED: 'ARRL_WAS,ADIF_UTF',
             CLUBLOG_QSO_UPLOAD_STATUS: 'y',
             COMMENT: 'HI',
-            CONT: 'NA',
+            CONT: 'na',
             CQZ: '05',
             EMAIL: 'tcort@tcort.dev',
             WEB: 'https://www.va2nw.ca/',
@@ -44,6 +44,7 @@ const f = File.fromJSON({
             EQSL_QSLSDATE: '20250914',
             FISTS: '14205',
             FREQ: '14.050',
+            GRIDSQUARE: 'FN25ck',
         },
     ]
 });
