@@ -42,6 +42,8 @@ const f = File.fromJSON({
             VE_PROV: 'QC',
             EQSL_QSLRDATE: '20250912',
             EQSL_QSLSDATE: '20250914',
+            FISTS: '14205',
+            FREQ: '14.050',
         },
     ]
 });

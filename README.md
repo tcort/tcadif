@@ -13,9 +13,14 @@ Read and write data in Amateur Data Interchange Format (ADIF) with JavaScript.
  - `COUNTRY` value corresponds to `DXCC` value when both are provided.
  - `STATE` value is valid for `DXCC` when both are provided.
  - etc, etc.
-- no automatic filling in of fields. For example
+- no automatic conversions for deprecated fields.
+ - `GUEST_OP` value isn't moved to `OPERATOR`
+ - `VE_PROV` value isn't moved to `STATE`
+- no automatic filling in of fields. For example:
  - `PFX` isn't populated automatically from the value of `CALL`
  - `BAND` isn't populated automatically based on the value of `FREQ`
  - `COUNTRY` isn't populated automatically based on the value of `DXCC`
  - etc, etc.
-
+- no automatic defaulting is performed. For example:
+ - the absence of `EQSL_QSL_SENT` does not automatically set `EQSL_QSL_SENT` to `N`.
+ - etc, etc.
