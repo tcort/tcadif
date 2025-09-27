@@ -12,5 +12,10 @@ Read and write data in Amateur Data Interchange Format (ADIF) with JavaScript.
  - `QSO_DATE`/`TIME_ON` is less than or equal to `QSO_DATE_OFF`/`TIME_OFF`.
  - `COUNTRY` value corresponds to `DXCC` value when both are provided.
  - `STATE` value is valid for `DXCC` when both are provided.
-- no automatic filling in of fields. For example, `WPX` isn't populated automatically from the value of `CALL`
  - etc, etc.
+- no automatic filling in of fields. For example
+ - `PFX` isn't populated automatically from the value of `CALL`
+ - `BAND` isn't populated automatically based on the value of `FREQ`
+ - `COUNTRY` isn't populated automatically based on the value of `DXCC`
+ - etc, etc.
+

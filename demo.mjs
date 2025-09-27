@@ -39,6 +39,9 @@ const f = File.fromJSON({
             DXCC: '1',
             EQ_CALL: 'VA2NW',
             EQSL_AG: 'Y',
+            VE_PROV: 'QC',
+            EQSL_QSLRDATE: '20250912',
+            EQSL_QSLSDATE: '20250914',
         },
     ]
 });
