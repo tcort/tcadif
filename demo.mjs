@@ -36,6 +36,9 @@ const f = File.fromJSON({
             CREDIT_GRANTED: 'AJA',
             DARC_DOK: 'Z84',
             MY_DARC_DOK: 'Z84',
+            DXCC: '1',
+            EQ_CALL: 'VA2NW',
+            EQSL_AG: 'Y',
         },
     ]
 });
