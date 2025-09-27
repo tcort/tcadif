@@ -45,6 +45,7 @@ const f = File.fromJSON({
             FISTS: '14205',
             FREQ: '14.050',
             GRIDSQUARE: 'FN25ck',
+            IOTA: 'NA-136',
         },
     ]
 });
