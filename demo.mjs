@@ -3,7 +3,7 @@
 import File from './lib/files/File.mjs';
 import HeaderSegment from './lib/segments/HeaderSegment.mjs';
 
-const f = File.fromJSON({
+const f = File.fromObj({
     HEADER: HeaderSegment.factory(),
     RECORDS: [
         {
@@ -51,6 +51,8 @@ const f = File.fromJSON({
             MY_LAT: 'N123 45.678',
             MY_LON: 'E123 45.678',
             MORSE_KEY_INFO: 'J-38',
+            MY_POTA_REF: 'CA-5004,CA-5082@CA-QC',
+            MY_SOTA_REF: 'VE2/OU-0014',
         },
     ]
 });

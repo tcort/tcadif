@@ -7,8 +7,10 @@ Read and write data in Amateur Data Interchange Format (ADIF) with JavaScript.
 - Application-Defined Fields and User-Defined Fields are ignored.
 - Implementations should be mindful of details of the specification. `RIG` and `MY_RIG` have different data types for example.
 - Enumerations included by reference with many possible values that are subject to change over time are not validated. For example:
+ - Primary Administrative Subdivision is not validated beyond basic string checks. It seems like the enumeration is incomplete.
  - Secondary Administrative Subdivision is not validated beyond basic string checks. There are over 10,000 valid values.
- - Special DARC DOKs can be added at anytime and don't seem to follow a particular uniform format.
+ - DARC DOK is not validated beyond basic string checks. Special DARC DOKs can be added at anytime and don't seem to follow a particular uniform format.
+ - etc, etc
 - Field names and case insensitive values are converted to uppercase to simplify validation and usage. For example: grid squares, enumeration values, etc.
 - no referential integrity checking have been implemented. That's up to the application developer. Here are some checks that are not implemented to give an idea of the problem space:
  - when both `FREQ` and `BAND` are present, the value of `FREQ` falls within the band value specified in `BAND`.
