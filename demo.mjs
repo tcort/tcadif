@@ -50,6 +50,7 @@ const f = File.fromJSON({
             LON: 'E123 45.678',
             MY_LAT: 'N123 45.678',
             MY_LON: 'E123 45.678',
+            MORSE_KEY_INFO: 'J-38',
         },
     ]
 });

@@ -5,7 +5,8 @@ Read and write data in Amateur Data Interchange Format (ADIF) with JavaScript.
 ## Implementation Notes
 
 - Application-Defined Fields and User-Defined Fields are ignored.
-- Enumerations included by reference with many possible values that are subject to change over time are not verified. For example:
+- Implementations should be mindful of details of the specification. `RIG` and `MY_RIG` have different data types for example.
+- Enumerations included by reference with many possible values that are subject to change over time are not validated. For example:
  - Secondary Administrative Subdivision is not validated beyond basic string checks. There are over 10,000 valid values.
  - Special DARC DOKs can be added at anytime and don't seem to follow a particular uniform format.
 - Field names and case insensitive values are converted to uppercase to simplify validation and usage. For example: grid squares, enumeration values, etc.
@@ -24,6 +25,7 @@ Read and write data in Amateur Data Interchange Format (ADIF) with JavaScript.
 - no automatic conversions for deprecated fields.
  - `GUEST_OP` value isn't moved to `OPERATOR`
  - `VE_PROV` value isn't moved to `STATE`
+ - etc, etc.
 - no automatic filling in of fields. For example:
  - `PFX` isn't populated automatically from the value of `CALL`
  - `BAND` isn't populated automatically based on the value of `FREQ`
