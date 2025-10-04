@@ -209,7 +209,7 @@ class AdifWriter extends Transform {
         });
 
         this.#header = header ?? {};
-        this.#header.ADIF_VER = this.#header.ADIF_VER ?? '3.1.5';
+        this.#header.ADIF_VER = this.#header.ADIF_VER ?? '3.1.6';
         this.#header.CREATED_TIMESTAMP = this.#header.CREATED_TIMESTAMP ?? Timestamper.CREATED_TIMESTAMP();
         this.#header.PROGRAMID = this.#header.PROGRAMID ?? pkg.name;
         this.#header.PROGRAMVERSION = this.#header.PROGRAMVERSION ?? pkg.version;
@@ -4093,9 +4093,11 @@ module.exports = {
     "ARRL-VHF-JUN": "ARRL June VHF QSO Party",
     "ARRL-VHF-SEP": "ARRL September VHF QSO Party",
     "AZ-QSO-PARTY": "Arizona QSO Party",
+    "BANGGAI-DX": "ORARI Banggai DX Contest",
     "BARTG-RTTY": "BARTG Spring RTTY Contest",
     "BARTG-SPRINT": "BARTG Sprint Contest",
     "BC-QSO-PARTY": "British Columbia QSO Party",
+    "BEKASI-MERDEKA-CONTEST": "ORARI Bekasi Merdeka Contest",
     "CA-QSO-PARTY": "California QSO Party",
     "CIS-DX": "CIS DX Contest",
     "CO-QSO-PARTY": "Colorado QSO Party",
@@ -4114,7 +4116,15 @@ module.exports = {
     "CVA-DX-SSB": "Concurso Verde e Amarelo DX CW Contest",
     "CWOPS-CW-OPEN": "CWops CW Open Competition",
     "CWOPS-CWT": "CWops Mini-CWT Test",
+    "DARC-10": "DARC 10m Contest",
+    "DARC-CWA": "DARC CW Trainee Contest",
     "DARC-FT4": "DARC FT4 Contest",
+    "DARC-HELL": "DARC Hell Contest",
+    "DARC-MICROWAVE": "DARC Microwave Contest",
+    "DARC-TRAINEE": "DARC Trainee Contest",
+    "DARC-UKW-SPRING": "DARC UKW Spring Contest",
+    "DARC-UKW-FIELD-DAY": "DARC UKW Summer Contest",
+    "DARC-VHF-UHF-MICROWAVE": "DARC VHF-, UHF-, Microwave Contest (May)",
     "DARC-WAEDC-CW": "WAE DX Contest (CW)",
     "DARC-WAEDC-RTTY": "WAE DX Contest (RTTY)",
     "DARC-WAEDC-SSB": "WAE DX Contest (SSB)",
@@ -4138,6 +4148,7 @@ module.exports = {
     "EA-VHF-QSL": "QSL V-UHF & 50MHz",
     "EA-VHF-SADURNI": "Sant Sadurni V-UHF",
     "EA-WW-RTTY": "Unión de Radioaficionados Españoles RTTY Contest",
+    "EASTER": "DARC Easter Contest",
     "EPC-PSK63": "PSK63 QSO Party",
     "EU Sprint": "EU Sprint",
     "EU-HF": "EU HF Championship",
@@ -4183,6 +4194,7 @@ module.exports = {
     "NAQP-CW": "North America QSO Party (CW)",
     "NAQP-RTTY": "North America QSO Party (RTTY)",
     "NAQP-SSB": "North America QSO Party (Phone)",
+    "NAVAL": "International Naval Contest (INC)",
     "NC-QSO-PARTY": "North Carolina QSO Party",
     "ND-QSO-PARTY": "North Dakota QSO Party",
     "NE-QSO-PARTY": "Nebraska QSO Party",
@@ -4203,6 +4215,7 @@ module.exports = {
     "OMISS-QSO-PARTY": "Old Man International Sideband Society QSO Party",
     "ON-QSO-PARTY": "Ontario QSO Party",
     "OR-QSO-PARTY": "Oregon QSO Party",
+    "ORARI-DX": "ORARI DX Contest",
     "PA-QSO-PARTY": "Pennsylvania QSO Party",
     "PACC": "Dutch PACC Contest",
     "PCC": "PCCPro CW Contest",
@@ -4238,6 +4251,7 @@ module.exports = {
     "SC-QSO-PARTY": "South Carolina QSO Party",
     "SCC-RTTY": "SCC RTTY Championship",
     "SD-QSO-PARTY": "South Dakota QSO Party",
+    "ShortRY": "DARC RTTY Short Contest",
     "SMP-AUG": "SSA Portabeltest",
     "SMP-MAY": "SSA Portabeltest",
     "SP-DX-RTTY": "PRC SPDX Contest (RTTY)",
@@ -4808,6 +4822,7 @@ module.exports = {
     "FAX": "FAX",
     "FM": "FM",
     "FSK441": "FSK441",
+    "FSK": "FSK",
     "FT8": "FT8",
     "HELL": "HELL",
     "ISCAT": "ISCAT",
@@ -4818,6 +4833,7 @@ module.exports = {
     "JT65": "JT65",
     "MFSK": "MFSK",
     "MSK144": "MSK144",
+    "MTONE": "MTONE",
     "MT63": "MT63",
     "OLIVIA": "OLIVIA",
     "OPERA": "OPERA",
@@ -11281,7 +11297,7 @@ function config (name) {
 },{}],224:[function(require,module,exports){
 module.exports={
   "name": "tcadif",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "read and write Amateur Data Interchange Format (ADIF)",
   "main": "index.js",
   "bin": {
