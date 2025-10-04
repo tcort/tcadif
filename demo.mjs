@@ -53,6 +53,7 @@ const f = File.fromObj({
             MORSE_KEY_INFO: 'J-38',
             MY_POTA_REF: 'CA-5004,CA-5082@CA-QC',
             MY_SOTA_REF: 'VE2/OU-0014',
+            SUBMODE: 'DOM22',
         },
     ]
 });
