@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/tcort/tcadif/issues"
   },
-  "homepage": "https://github.com/tcort/tcadif#readme"
+  "homepage": "https://github.com/tcort/tcadif#readme",
+  "devDependencies": {
+    "webpack": "^5.102.0",
+    "webpack-cli": "^6.0.1"
+  }
 }

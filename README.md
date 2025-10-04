@@ -18,9 +18,9 @@ const obj = File.fromADI(s).toObj();
 ```
 'use strict';
 
-import AdifFile from 'tcadif';
+import { File } from 'tcadif';
 
-const s = AdifFile.fromObj({
+const s = File.fromObj({
     RECORDS: [
         {
             TIME_ON: '2345',

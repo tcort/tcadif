@@ -1,4 +1,11 @@
 'use strict';
 
-import AdifFile from './lib/files/AdifFile.mjs';
-export default AdifFile;
+import File from './lib/files/File.mjs';
+import Version from './lib/Version.mjs';
+
+const tcadif = {
+    File,
+    Version,
+};
+
+export default tcadif;
