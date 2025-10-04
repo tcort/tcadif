@@ -2,6 +2,37 @@
 
 Read and write data in Amateur Data Interchange Format (ADIF) with JavaScript.
 
+## Reader
+
+```
+import { File } from 'tcadif';
+
+const obj = File.fromADI(s).toObj();
+
+// obj.HEADER
+// obj.RECORDS
+```
+
+## Writer
+
+```
+'use strict';
+
+import AdifFile from 'tcadif';
+
+const s = AdifFile.fromObj({
+    RECORDS: [
+        {
+            TIME_ON: '2345',
+            QSO_DATE: '20251002',
+            CALL: 'VA2NW',
+            BAND: '20M',
+            MODE: 'CW',
+        }
+    ],
+}).toADI();
+```
+
 ## Implementation Notes
 
 - Application-Defined Fields and User-Defined Fields are ignored.

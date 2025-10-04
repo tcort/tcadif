@@ -1,4 +1,4 @@
 'use strict';
 
-import File from './lib/files/File.mjs';
-export default { File };
+import AdifFile from './lib/files/AdifFile.mjs';
+export default AdifFile;
