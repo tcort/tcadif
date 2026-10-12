@@ -194,8 +194,8 @@ const Header = require('./Header');
 const Timestamper = require('./utils/Timestamper');
 const QSO = require('./QSO');
 const os = require('os');
-const pkg = require('../package.json');
 const { Transform } = require('stream');
+const Version = require('./Version');
 
 class AdifWriter extends Transform {
 
@@ -209,10 +209,10 @@ class AdifWriter extends Transform {
         });
 
         this.#header = header ?? {};
-        this.#header.ADIF_VER = this.#header.ADIF_VER ?? '3.1.7';
+        this.#header.ADIF_VER = this.#header.ADIF_VER ?? Version.adifVersion;
         this.#header.CREATED_TIMESTAMP = this.#header.CREATED_TIMESTAMP ?? Timestamper.CREATED_TIMESTAMP();
-        this.#header.PROGRAMID = this.#header.PROGRAMID ?? pkg.name;
-        this.#header.PROGRAMVERSION = this.#header.PROGRAMVERSION ?? pkg.version;
+        this.#header.PROGRAMID = this.#header.PROGRAMID ?? Version.name;
+        this.#header.PROGRAMVERSION = this.#header.PROGRAMVERSION ?? Version.version;
 
         this.#options = options ?? {};
         this.#options.recordDelim = this.#options?.recordDelim ?? `${os.EOL}${os.EOL}`;
@@ -238,7 +238,7 @@ class AdifWriter extends Transform {
 
 module.exports = AdifWriter;
 
-},{"../package.json":226,"./Header":7,"./QSO":8,"./utils/Timestamper":199,"os":206,"stream":209}],5:[function(require,module,exports){
+},{"./Header":7,"./QSO":8,"./Version":9,"./utils/Timestamper":199,"os":206,"stream":209}],5:[function(require,module,exports){
 'use strict';
 
 const Continent = require('./enums/Continent.js');
@@ -577,8 +577,9 @@ module.exports = QSO;
 },{"./AdifError":2,"./DataTypes":5,"./Field":6,"./defs":175,"os":206}],9:[function(require,module,exports){
 'use strict';
 
+const adifVersion = '3.1.8';
 const { name, version, homepage } = require('../package.json');
-module.exports = { name, version, homepage };
+module.exports = { name, version, homepage, adifVersion };
 
 },{"../package.json":226}],10:[function(require,module,exports){
 'use strict';
@@ -4301,6 +4302,10 @@ module.exports = {
     "SCC-RTTY": "SCC RTTY Championship",
     "SD-QSO-PARTY": "South Dakota QSO Party",
     "ShortRY": "DARC RTTY Short Contest",
+    "SKCC-SKS": "SKCC Straight Key Sprint",
+    "SKCC-SKSA": "SKCC Straight Key Sprint Asia",
+    "SKCC-SKSE": "SKCC Straight Key Sprint Europe",
+    "SKCC-WES": "SKCC Weekend Sprintathon",
     "SMP-AUG": "SSA Portabeltest",
     "SMP-MAY": "SSA Portabeltest",
     "SP-DX-RTTY": "PRC SPDX Contest (RTTY)",
@@ -11382,7 +11387,7 @@ module.exports={
   "devDependencies": {
     "browserify": "^17.0.1",
     "expect.js": "^0.3.1",
-    "mocha": "^11.7.4"
+    "mocha": "^12.0.3"
   }
 }
 
