@@ -11352,7 +11352,7 @@ function config (name) {
 },{}],226:[function(require,module,exports){
 module.exports={
   "name": "tcadif",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "read and write Amateur Data Interchange Format (ADIF)",
   "main": "index.js",
   "bin": {
